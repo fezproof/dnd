@@ -8,6 +8,7 @@ export type PlayerData = {
 	name: string;
 	race: string;
 	level: number;
+	image: string;
 };
 
 export interface PlayerResult {
