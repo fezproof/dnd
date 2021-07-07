@@ -1,2 +1,7 @@
-<script>import "../app.postcss";</script>
-<slot></slot>
+<script>
+	import '../app.postcss';
+</script>
+
+<div class="mx-4 my-4">
+	<slot />
+</div>

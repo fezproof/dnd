@@ -1,12 +1,11 @@
 const config = {
-	mode: "jit",
-	purge: [
-		"./src/**/*.{html,js,svelte,ts}",
-	],
+	mode: 'jit',
+	purge: ['./src/**/*.{html,js,svelte,ts}'],
+	// darkMode: 'media',
 	theme: {
-		extend: {},
+		extend: {}
 	},
-	plugins: [],
+	plugins: [require('@tailwindcss/typography')]
 };
 
 module.exports = config;
