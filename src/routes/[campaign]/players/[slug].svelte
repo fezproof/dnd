@@ -18,6 +18,6 @@
 	export let result: PlayerGetResult;
 </script>
 
-<main class="prose max-w-prose mx-auto">
+<main class="prose max-w-prose mx-auto text-gray-100 my-8">
 	{@html result.player.content}
 </main>

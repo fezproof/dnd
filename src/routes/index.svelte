@@ -1,55 +1,82 @@
 <script context="module" lang="ts">
-	import { base } from '$app/paths';
-	import type { Load } from '@sveltejs/kit';
+	// import { base } from '$app/paths';
+	// import type { Load } from '@sveltejs/kit';
 
-	export const load: Load = async ({ fetch }) => {
-		const result = await fetch(`${base}/index.json`).then((r) => r.json());
-		return {
-			props: { result }
-		};
-	};
+	// export const load: Load = async ({ fetch }) => {
+	// 	const result = await fetch(`${base}/index.json`).then((r) => r.json());
+	// 	return {
+	// 		props: { result }
+	// 	};
+	// };
 </script>
 
 <script lang="ts">
-	import type { IndexGetResult } from './index.json';
+	// import type { IndexGetResult } from './index.json';
 
-	export let result: IndexGetResult;
+	// export let result: IndexGetResult;
 </script>
 
-<div class="fixed inset-0 z-[-1] h-full w-full">
-	<img src="hero.jpg" alt="hero" class="h-full w-full object-cover" />
-</div>
+<div class="h-screen flex flex-col flex-nowrap">
+	<div class="h-32 flex items-center justify-center">
+		<h1 class="text-5xl font-semibold">Scroll'd</h1>
+	</div>
 
-<div class="h-72 flex items-center justify-center">
-	<h1 class="text-5xl font-semibold">Eos Rising</h1>
-</div>
-
-<div class="mx-auto max-w-prose">
-	<h2 class="text-2xl mb-6 font-semibold">Players</h2>
-	<div class="grid gap-4 grid-flow-col items-start justify-center">
-		{#each result.players as player}
-			<a href={player.slug}>
-				<div
-					class="relative bg-gray-200/30 backdrop-blur-md hover:bg-gray-200/50 flex flex-col rounded-md h-64 w-52 transition-all"
-				>
-					<div class="flex-grow flex items-center justify-center">
-						<img
-							class="w-40 h-40 rounded-full object-cover"
-							src={player.data.image}
-							alt={`${player.data.name} image`}
-						/>
-					</div>
-					<div class="my-2 mx-4">
-						<h3 class="text-2xl">{player.data.name}</h3>
-						<h4>{player.data.race}</h4>
-						<h5
-							class="absolute top-0 right-0 w-8 h-8 rounded-tr-md rounded-bl-md flex items-center justify-center bg-gray-200/30"
-						>
-							{player.data.level}
-						</h5>
+	<main class="flex-1">
+		<div
+			class="w-full h-full p-8 flex flex-nowrap flex-col md:flex-row items-stretch justify-items-stretch"
+		>
+			<a href="/eos-rising" class="campaign-link">
+				<div class="relative h-full w-full">
+					<img
+						src="/eos-rising.jpg"
+						alt="Eos Rising"
+						class="absolute inset-0 object-cover h-full w-full"
+					/>
+					<div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60" />
+					<div class="absolute bottom-0 left-0 w-full py-4 px-6">
+						<h2 class="text-2xl">Eos Rising</h2>
 					</div>
 				</div>
 			</a>
-		{/each}
-	</div>
+			<a href="/hunters-arcane" class="campaign-link">
+				<div class="relative h-full w-full">
+					<img
+						src="/hunters-arcane.jpg"
+						alt="Hunters Of The Arcane"
+						class="absolute inset-0 object-cover h-full w-full"
+					/>
+					<div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60" />
+					<div class="absolute bottom-0 left-0 w-full py-4 px-6">
+						<h2 class="text-2xl">Hunters Of The Arcane</h2>
+					</div>
+				</div>
+			</a>
+			<a href="/unfortunate" class="campaign-link">
+				<div class="relative h-full w-full">
+					<img
+						src="/unfortunate.jpg"
+						alt="Series Of Unfortunate Events"
+						class="absolute inset-0 object-cover h-full w-full"
+					/>
+					<div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60" />
+					<div class="absolute bottom-0 left-0 w-full py-4 px-6">
+						<h2 class="text-2xl">Series Of Unfortunate Events</h2>
+					</div>
+				</div>
+			</a>
+		</div>
+	</main>
 </div>
+
+<style lang="postcss">
+	.campaign-link {
+		@apply bg-red-300 h-1/3 md:w-1/3 md:h-full flex-initial m-2 transition-all outline-none;
+	}
+	.campaign-link:hover,
+	.campaign-link:focus {
+		@apply h-4/5 md:w-10/12 md:h-full;
+	}
+	.campaign-link:focus {
+		@apply ring ring-purple-600 ring-offset-4 ring-offset-green-900;
+	}
+</style>

@@ -20,7 +20,7 @@
 </script>
 
 <div class="fixed inset-0 z-[-1] h-full w-full">
-	<img src="hero.jpg" alt="hero" class="h-full w-full object-cover" />
+	<img src="eos-rising.jpg" alt="eos rising hero" class="h-full w-full object-cover" />
 </div>
 
 <div class="h-72 flex items-center justify-center">
