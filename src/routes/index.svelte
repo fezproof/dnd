@@ -25,10 +25,10 @@
 		<div
 			class="w-full h-full p-8 flex flex-nowrap flex-col md:flex-row items-stretch justify-items-stretch"
 		>
-			<a href="/eos-rising" class="campaign-link">
+			<a href="eos-rising" class="campaign-link">
 				<div class="relative h-full w-full">
 					<img
-						src="/eos-rising.jpg"
+						src="eos-rising.jpg"
 						alt="Eos Rising"
 						class="absolute inset-0 object-cover h-full w-full"
 					/>
@@ -38,10 +38,10 @@
 					</div>
 				</div>
 			</a>
-			<a href="/hunters-arcane" class="campaign-link">
+			<a href="hunters-arcane" class="campaign-link">
 				<div class="relative h-full w-full">
 					<img
-						src="/hunters-arcane.jpg"
+						src="hunters-arcane.jpg"
 						alt="Hunters Of The Arcane"
 						class="absolute inset-0 object-cover h-full w-full"
 					/>
@@ -51,10 +51,10 @@
 					</div>
 				</div>
 			</a>
-			<a href="/unfortunate" class="campaign-link">
+			<a href="unfortunate" class="campaign-link">
 				<div class="relative h-full w-full">
 					<img
-						src="/unfortunate.jpg"
+						src="unfortunate.jpg"
 						alt="Series Of Unfortunate Events"
 						class="absolute inset-0 object-cover h-full w-full"
 					/>
