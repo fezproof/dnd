@@ -17,7 +17,7 @@ export interface PlayerResult {
 	data: PlayerData;
 }
 
-const getPlayerMD = async (slug: string): Promise<PlayerResult> => {
+const getPlayerMD = async (slug: string, base = ''): Promise<PlayerResult> => {
 	const fileContents = await fs.readFile(join(PLAYERS_FILE_DIR, slug.concat('.md')), {
 		encoding: 'utf8'
 	});
@@ -26,7 +26,7 @@ const getPlayerMD = async (slug: string): Promise<PlayerResult> => {
 
 	return {
 		content,
-		slug: join('players', slug),
+		slug: join(base, 'players', slug),
 		data
 	};
 };
