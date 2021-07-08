@@ -4,7 +4,7 @@ import { promises as fs } from 'fs';
 
 const playersFileDir = 'src/posts/players';
 
-const getPlayers = async () => {
+const getPlayers = async (base: string) => {
 	const playerFiles = await fs.readdir(playersFileDir);
 
 	const players = await Promise.all(
@@ -13,7 +13,7 @@ const getPlayers = async () => {
 			.map(async (fileName) => {
 				const slug = fileName.replace(/\.md$/, '');
 
-				return await getPlayerMD(slug);
+				return await getPlayerMD(slug, base);
 			})
 	);
 
@@ -24,10 +24,10 @@ export interface IndexGetResult {
 	players: PlayerResult[];
 }
 
-export const get: RequestHandler = async () => {
-	// const players = await getPlayers();
+export const get: RequestHandler = async ({ params }) => {
+	const players = await getPlayers(params.campaign);
 
-	// const body = JSON.stringify({ players });
+	const body = JSON.stringify({ players });
 
-	return { body: { players: [] } };
+	return { body };
 };
