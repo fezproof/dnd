@@ -13,7 +13,10 @@ const config = {
 				}
 			},
 			fontFamily: {
-				serif: ['Abhaya Libre', ...defaultTheme.fontFamily.serif]
+				serif: ['Abhaya Libre', ...defaultTheme.fontFamily.serif],
+				eos: ["'Starbirl'", ...defaultTheme.fontFamily.sans],
+				unfortunate: ['chauncy-pro', ...defaultTheme.fontFamily.sans],
+				hunters: ['ccmonstermash', ...defaultTheme.fontFamily.sans]
 			}
 		}
 	},
