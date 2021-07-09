@@ -2,7 +2,7 @@
 name: Grub
 level: 3
 race: Panda Boi
-image: players/grub.jpg
+image: /players/grub.jpg
 ---
 
 # Grub

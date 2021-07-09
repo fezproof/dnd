@@ -1,5 +1,5 @@
 <script context="module" lang="ts">
-	import { base } from '$app/paths';
+	import { assets, base } from '$app/paths';
 	import type { Load } from '@sveltejs/kit';
 
 	export const load: Load = async ({ fetch, page }) => {
@@ -20,7 +20,7 @@
 </script>
 
 <div class="fixed inset-0 z-[-1] h-full w-full">
-	<img src="eos-rising.jpg" alt="eos rising hero" class="h-full w-full object-cover" />
+	<img src={`${base}/eos-rising.jpg`} alt="eos rising hero" class="h-full w-full object-cover" />
 </div>
 
 <div class="h-72 flex items-center justify-center">
@@ -38,7 +38,7 @@
 					<div class="flex-grow flex items-center justify-center">
 						<img
 							class="w-40 h-40 rounded-full object-cover"
-							src={player.data.image}
+							src={`${base}${player.data.image}`}
 							alt={`${player.data.name} image`}
 						/>
 					</div>
