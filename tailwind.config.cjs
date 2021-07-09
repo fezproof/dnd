@@ -10,6 +10,9 @@ const config = {
 				green: {
 					main: '#0C3537',
 					light: '#6CC5AE'
+				},
+				orange: {
+					main: '#F7AA63'
 				}
 			},
 			fontFamily: {

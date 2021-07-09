@@ -1,4 +1,4 @@
-<script context="module" lang="ts">
+<!-- <script context="module" lang="ts">
 	import { assets, base } from '$app/paths';
 	import type { Load } from '@sveltejs/kit';
 
@@ -11,48 +11,55 @@
 			props: { result }
 		};
 	};
-</script>
-
+</script> -->
 <script lang="ts">
-	import type { IndexGetResult } from './index.json';
+	// import type { IndexGetResult } from './index.json';
 
-	export let result: IndexGetResult;
+	// export let result: IndexGetResult;
+
+	import { base } from '$app/paths';
 </script>
 
-<div class="fixed inset-0 z-[-1] h-full w-full">
-	<img src={`${base}/eos-rising.jpg`} alt="eos rising hero" class="h-full w-full object-cover" />
+<div class="absolute top-0 left-0 right-0 z-[-1] h-full w-full">
+	<img
+		src={`${base}/eos-rising.jpg`}
+		alt="eos rising hero"
+		class="absolute inset-0 h-full w-full object-cover"
+	/>
+	<div
+		class="bg-gradient-to-b from-transparent via-green-main/40 to-green-main h-full w-full absolute inset-0"
+	/>
 </div>
 
-<div class="h-72 flex items-center justify-center">
-	<h1 class="text-5xl font-semibold">Eos Rising</h1>
+<div class="min-h-screen flex flex-col items-center justify-center">
+	<h2
+		class="mt-40 text-4xl md:text-6xl lg:text-7xl font-semibold border-b-8 border-orange-main font-eos mb-8"
+	>
+		Eos Rising
+	</h2>
+	<p class="max-w-prose px-6 mb-6 font-serif text-2xl">
+		Tua amin! khila amin elen sila lumenn omentilmo Tulien. Faina templa lle naa vanima Nadorhuanrim
+		ed' i'ear ar' elenea!. Amin feuya ten' lle manke naa i'omentien Saurarea amin irma fion laure
+		sereg. Ai' atar Ithil'quessir lle naa belegohtar asca melloneamin. Avarierea mellon en
+		mellonamin n'ndengina ta ho mereth en draugrim.
+	</p>
+	<a
+		href="#"
+		class="border-2 border-green-light rounded-lg px-3 py-2 uppercase text-green-light text-lg font-bold"
+	>
+		Read more
+	</a>
 </div>
 
-<div class="mx-auto max-w-prose">
-	<h2 class="text-2xl mb-6 font-semibold">Players</h2>
-	<div class="grid gap-4 grid-flow-col items-start justify-center">
-		{#each result.players as player}
-			<a href={player.slug}>
-				<div
-					class="relative bg-gray-200/30 backdrop-blur-md hover:bg-gray-200/50 flex flex-col rounded-md h-64 w-52 transition-all"
-				>
-					<div class="flex-grow flex items-center justify-center">
-						<img
-							class="w-40 h-40 rounded-full object-cover"
-							src={`${base}${player.data.image}`}
-							alt={`${player.data.name} image`}
-						/>
-					</div>
-					<div class="my-2 mx-4">
-						<h3 class="text-2xl">{player.data.name}</h3>
-						<h4>{player.data.race}</h4>
-						<h5
-							class="absolute top-0 right-0 w-8 h-8 rounded-tr-md rounded-bl-md flex items-center justify-center bg-gray-200/30"
-						>
-							{player.data.level}
-						</h5>
-					</div>
-				</div>
-			</a>
-		{/each}
+<main>
+	<div class="h-96 mx-auto max-w-prose text-center">
+		<h3 class="text-4xl mb-6 font-semibold font-eos">The Misfits</h3>
 	</div>
-</div>
+	<div class="h-96 mx-auto max-w-prose text-center">
+		<h3 class="text-4xl mb-6 font-semibold font-eos">The World</h3>
+	</div>
+
+	<div class="h-96 mx-auto max-w-prose text-center">
+		<h3 class="text-4xl mb-6 font-semibold font-eos">Mission Logs</h3>
+	</div>
+</main>

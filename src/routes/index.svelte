@@ -2,7 +2,7 @@
 	import { base } from '$app/paths';
 </script>
 
-<main class="flex-1 px-8 pb-8 flex w-full items-stretch justify-center">
+<main class="mt-40 flex-1 px-8 pb-8 flex w-full items-stretch justify-center">
 	<div class="w-full flex flex-nowrap flex-col md:flex-row items-stretch justify-evenly relative">
 		<a href={`${base}/eos-rising`} class="campaign-link left">
 			<div class="image-clip clip">
