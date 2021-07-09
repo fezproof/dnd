@@ -1,4 +1,6 @@
 <script>
+	import Nav from '$lib/components/Nav.svelte';
+
 	import '../app.postcss';
 </script>
 
@@ -10,4 +12,7 @@
 	/>
 </svelte:head>
 
-<slot />
+<div class="min-h-screen flex flex-col flex-nowrap">
+	<Nav />
+	<slot />
+</div>
