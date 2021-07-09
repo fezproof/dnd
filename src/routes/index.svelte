@@ -1,9 +1,9 @@
 <main class="flex-1 px-8 pb-8 flex w-full items-stretch justify-center">
 	<div class="w-full flex flex-nowrap flex-col md:flex-row items-stretch justify-evenly relative">
-		<a href="/eos-rising" class="campaign-link left">
+		<a href="eos-rising" class="campaign-link left">
 			<div class="image-clip clip">
 				<div class="fixed inset-0">
-					<img src="/eos-rising.jpg" alt="Eos Rising" class="object-cover h-full w-full" />
+					<img src="eos-rising.jpg" alt="Eos Rising" class="object-cover h-full w-full" />
 					<div class="tint" />
 				</div>
 				<div class="title-container">
@@ -11,11 +11,11 @@
 				</div>
 			</div>
 		</a>
-		<a href="/hunters-arcane" class="campaign-link center">
+		<a href="hunters-arcane" class="campaign-link center">
 			<div class="image-clip clip">
 				<div class="fixed inset-0">
 					<img
-						src="/hunters-arcane.jpg"
+						src="hunters-arcane.jpg"
 						alt="Hunters Of The Arcane"
 						class="object-cover h-full w-full"
 					/>
@@ -26,11 +26,11 @@
 				</div>
 			</div>
 		</a>
-		<a href="/unfortunate" class="campaign-link right">
+		<a href="unfortunate" class="campaign-link right">
 			<div class="image-clip clip">
 				<div class="fixed inset-0">
 					<img
-						src="/unfortunate.jpg"
+						src="unfortunate.jpg"
 						alt="Series Of Unfortunate Events"
 						class="object-cover h-full w-full"
 					/>
