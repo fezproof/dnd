@@ -1,7 +1,7 @@
 <script>
 	import Nav from '$lib/components/Nav.svelte';
 
-	import '../app.postcss';
+	import '../app.css';
 </script>
 
 <svelte:head>
