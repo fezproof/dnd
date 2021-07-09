@@ -1,4 +1,16 @@
-<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+<script lang="ts">
+	let clazz: string | undefined;
+	export { clazz as class };
+</script>
+
+<svg
+	width="64"
+	height="64"
+	viewBox="0 0 64 64"
+	fill="none"
+	xmlns="http://www.w3.org/2000/svg"
+	class={clazz}
+>
 	<g id="d20">
 		<circle id="background" cx="32" cy="32" r="32" fill="#0C3537" />
 		<g id="leaves">
