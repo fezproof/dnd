@@ -1,28 +1,28 @@
-<script>
+<script context="module" lang="ts">
+	import { base } from '$app/paths';
+	import type { Load } from '@sveltejs/kit';
+
+	export const load: Load = async ({ fetch }) => {
+		const { campaigns } = await fetch(`${base}/campaigns.json`).then((r) => r.json());
+
+		return {
+			props: { campaigns }
+		};
+	};
+</script>
+
+<script lang="ts">
 	import ShardItem from '$lib/components/Shards/ShardItem.svelte';
 	import ShardsContainer from '$lib/components/Shards/ShardsContainer.svelte';
+	import type { CampaignData } from './campaigns.json';
 
-	const campaigns = [
-		{ image: '/eos-rising.jpg', link: '/eos-rising', title: 'Eos Rising', font: 'font-eos' },
-		{
-			image: '/hunters-arcane.jpg',
-			link: '/hunters-arcane',
-			title: 'Hunters of the Arcane',
-			font: 'font-hunters'
-		},
-		{
-			image: '/unfortunate.jpg',
-			link: '/unfortuante',
-			title: 'A series of Unfortunate Events',
-			font: 'font-unfortunate'
-		}
-	];
+	export let campaigns: CampaignData[];
 </script>
 
 <main class="mt-40 flex-1 px-8 pb-8 flex w-full items-stretch justify-center">
 	<ShardsContainer>
 		{#each campaigns as campaign (campaign.link)}
-			<ShardItem {...campaign} />
+			<ShardItem fixed {...campaign} />
 		{/each}
 	</ShardsContainer>
 </main>

@@ -1,6 +1,9 @@
-<!-- <script context="module" lang="ts">
-	import { assets, base } from '$app/paths';
+<script context="module" lang="ts">
+	import { base } from '$app/paths';
+	import ShardsContainer from '$lib/components/Shards/ShardsContainer.svelte';
+	import classes from '$lib/styles/button.module.css';
 	import type { Load } from '@sveltejs/kit';
+	import type { IndexGetResult } from './index.json';
 
 	export const load: Load = async ({ fetch, page }) => {
 		const campaign = page.params.campaign;
@@ -11,15 +14,14 @@
 			props: { result }
 		};
 	};
-</script> -->
+</script>
+
 <script lang="ts">
-	// import type { IndexGetResult } from './index.json';
+	import ShardItem from '$lib/components/Shards/ShardItem.svelte';
 
-	// export let result: IndexGetResult;
+	export let result: IndexGetResult;
 
-	import { base } from '$app/paths';
-
-	import classes from '$lib/styles/button.module.css';
+	const { players } = result;
 </script>
 
 <div class="absolute top-0 left-0 right-0 z-[-1] h-full w-full">
@@ -49,14 +51,33 @@
 </div>
 
 <main>
-	<div class="h-96 mx-auto max-w-prose text-center">
-		<h3 class="text-4xl mb-6 font-semibold font-eos">The Misfits</h3>
-	</div>
-	<div class="h-96 mx-auto max-w-prose text-center">
-		<h3 class="text-4xl mb-6 font-semibold font-eos">The World</h3>
-	</div>
+	<section class="h-screen py-12 flex flex-col">
+		<h3 class="section-heading">The Misfits</h3>
+		<div class="flex-1 flex w-full items-stretch justify-center px-8">
+			<ShardsContainer>
+				{#each players as player (player.slug)}
+					<ShardItem
+						font="font-eos"
+						image={player.data.image}
+						link={player.slug}
+						title={player.data.name}
+					/>
+				{/each}
+			</ShardsContainer>
+		</div>
+	</section>
 
-	<div class="h-96 mx-auto max-w-prose text-center">
-		<h3 class="text-4xl mb-6 font-semibold font-eos">Mission Logs</h3>
-	</div>
+	<section class="h-96 mx-auto max-w-prose text-center py-12">
+		<h3 class="section-heading">The World</h3>
+	</section>
+
+	<section class="h-96 mx-auto max-w-prose text-center py-12">
+		<h3 class="section-heading">Mission Logs</h3>
+	</section>
 </main>
+
+<style lang="postcss">
+	.section-heading {
+		@apply text-4xl inline-block mx-auto mb-8 font-semibold font-eos border-b-8 border-orange-main;
+	}
+</style>

@@ -2,6 +2,9 @@
 	import { base } from '$app/paths';
 	import classes from '$lib/styles/button.module.css';
 
+	export let fixed: boolean = false;
+	const absolute = !fixed;
+
 	export let image: string;
 	export let link: string;
 	export let title: string;
@@ -10,7 +13,7 @@
 
 <div class="campaign-link left">
 	<div class="image-clip clip" tabindex="0">
-		<div class="fixed inset-0">
+		<div class="inset-0" class:fixed class:absolute>
 			<img src={`${base}${image}`} alt={title} class="object-cover h-full w-full" />
 			<div class="tint" />
 		</div>
