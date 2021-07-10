@@ -47,7 +47,7 @@
 		sereg. Ai' atar Ithil'quessir lle naa belegohtar asca melloneamin. Avarierea mellon en
 		mellonamin n'ndengina ta ho mereth en draugrim.
 	</p>
-	<a href={base} class={classes['primary-button']}> Read more </a>
+	<a href={`${base}/eos-rising`} class={classes['primary-button']}> Read more </a>
 </div>
 
 <main>
