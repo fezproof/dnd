@@ -28,7 +28,7 @@
 
 <style lang="postcss">
 	.campaign-link {
-		@apply mb-4 last:mb-0 md:mb-0 md:mr-4 md:last:mr-0 h-full w-full transition-all outline-none flex-[1];
+		@apply mb-2 last:mb-0 md:mb-0 md:mr-2 md:last:mr-0 h-full w-full transition-all outline-none flex-[1];
 	}
 
 	.campaign-link:hover,
