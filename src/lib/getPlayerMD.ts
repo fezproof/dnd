@@ -1,5 +1,6 @@
 import { promises as fs } from 'fs';
 import { join } from 'path';
+import { base } from '$app/paths';
 import markdownToHtml from './markdown';
 
 const PLAYERS_FILE_DIR = 'src/posts/players';
@@ -17,7 +18,7 @@ export interface PlayerResult {
 	data: PlayerData;
 }
 
-const getPlayerMD = async (slug: string, base = ''): Promise<PlayerResult> => {
+const getPlayerMD = async (slug: string, basePath = ''): Promise<PlayerResult> => {
 	const fileContents = await fs.readFile(join(PLAYERS_FILE_DIR, slug.concat('.md')), {
 		encoding: 'utf8'
 	});
@@ -26,7 +27,7 @@ const getPlayerMD = async (slug: string, base = ''): Promise<PlayerResult> => {
 
 	return {
 		content,
-		slug: join(base, 'players', slug),
+		slug: join(base, basePath, 'players', slug),
 		data
 	};
 };

@@ -56,7 +56,12 @@
 		<div class="flex-1 flex w-full items-stretch justify-center px-8">
 			<ShardsContainer>
 				{#each players as player (player.slug)}
-					<ShardItem font="font-eos" image={player.data.image} link="" title={player.data.name} />
+					<ShardItem
+						font="font-eos"
+						image={player.data.image}
+						link={player.slug}
+						title={player.data.name}
+					/>
 				{/each}
 			</ShardsContainer>
 		</div>
