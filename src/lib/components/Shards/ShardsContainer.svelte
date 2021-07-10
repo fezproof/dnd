@@ -1,3 +1,3 @@
-<div class="w-full flex flex-nowrap flex-col md:flex-row items-stretch justify-evenly relative">
+<div class="w-full flex flex-nowrap flex-col md:flex-row relative">
 	<slot />
 </div>

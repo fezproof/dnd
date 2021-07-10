@@ -11,16 +11,16 @@
 	export let font: string;
 </script>
 
-<div class="campaign-link image-clip clip">
-	<div class="inset-0" class:fixed class:absolute>
-		<img src={`${base}${image}`} alt={title} class="object-cover h-full w-full" />
-		<div class="tint" />
-	</div>
+<div class="campaign-link clip">
 	<div class="title-container">
 		<div class="title">
 			<h2 class={`mb-4 ${font}`}>{title}</h2>
 			<a href={`${base}${link}`} class={classes['primary-button']}>Enter</a>
 		</div>
+	</div>
+	<div class="inset-0 z-[-1]" class:fixed class:absolute>
+		<img src={`${base}${image}`} alt={title} class="object-cover h-full w-full" />
+		<div class="tint" />
 	</div>
 </div>
 
