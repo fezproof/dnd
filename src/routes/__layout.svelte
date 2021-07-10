@@ -12,7 +12,5 @@
 	/>
 </svelte:head>
 
-<div class="min-h-screen flex flex-col flex-nowrap">
-	<Nav />
-	<slot />
-</div>
+<Nav />
+<slot />
