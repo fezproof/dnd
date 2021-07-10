@@ -52,7 +52,7 @@
 	<main>
 		<section class="h-screen py-12 flex flex-col">
 			<h3 class="section-heading">The Misfits</h3>
-			<div class="flex-1 flex w-full items-stretch justify-center px-8">
+			<div class="flex-1 flex w-full items-stretch justify-center px-8 mx-auto max-w-prose">
 				<ShardsContainer>
 					{#each players as player (player.slug)}
 						<ShardItem

@@ -1,11 +1,9 @@
 ---
 name: Grub
 level: 3
-race: Panda Boi
+race: Fulgen
 image: /players/grub.jpg
 ---
-
-# Grub
 
 A shapeless shadow danced across the flagstones in Shira square, the only noise heard is the pitter patter of four tiny paws clambering over the damp cobblestones. The sound of rain on tiled roofs drowning out the only telltale sign of his presence. His bushy tail crests the roof of the most prominent building in the village, giving him a chance to pause and check his surroundings for unaccounted variables. A habit that’s hard to break, as he knows he is unlikely to have missed anything. His pupils dilate to the size of marbles as he struggles to see in the low light of dusk. A myriad of villagers seeking refuge from the rain and one or two priests going about their business. Nothing of concern.
 

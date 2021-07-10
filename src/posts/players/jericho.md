@@ -5,8 +5,6 @@ race: Dragonborn
 image: /players/jericho.jpg
 ---
 
-# Jericho
-
 New Korham.
 
 What a shithole.
