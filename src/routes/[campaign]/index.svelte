@@ -18,6 +18,8 @@
 	// export let result: IndexGetResult;
 
 	import { base } from '$app/paths';
+
+	import classes from '$lib/styles/button.module.css';
 </script>
 
 <div class="absolute top-0 left-0 right-0 z-[-1] h-full w-full">
@@ -43,12 +45,7 @@
 		sereg. Ai' atar Ithil'quessir lle naa belegohtar asca melloneamin. Avarierea mellon en
 		mellonamin n'ndengina ta ho mereth en draugrim.
 	</p>
-	<a
-		href="#"
-		class="border-2 border-green-light rounded-lg px-3 py-2 uppercase text-green-light text-lg font-bold"
-	>
-		Read more
-	</a>
+	<a href="#" class={classes['primary-button']}> Read more </a>
 </div>
 
 <main>

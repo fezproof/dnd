@@ -1,0 +1,3 @@
+.primary-button {
+	@apply font-sans border-2 border-green-light rounded-lg px-2 py-1 uppercase text-green-light text-lg font-bold;
+}
