@@ -11,11 +11,11 @@
 	export let font: string;
 </script>
 
-<div class="campaign-link clip">
-	<div class="top-0 right-0 bottom-0 left-0 bg-red-500" class:fixed class:absolute>
-		<!-- <img src={`${base}${image}`} alt={title} class="object-cover h-full w-full" />
-		<div class="tint" /> -->
-	</div>
+<div class="campaign-link bg-red-500">
+	<!-- <div class="top-0 right-0 bottom-0 left-0" class:fixed class:absolute>
+		<img src={`${base}${image}`} alt={title} class="object-cover h-full w-full" />
+		<div class="tint" />
+	</div> -->
 	<div class="title-container">
 		<div class="title">
 			<h2 class={`mb-4 ${font}`}>{title}</h2>
