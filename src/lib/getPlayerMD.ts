@@ -1,6 +1,5 @@
 import { promises as fs } from 'fs';
 import { join } from 'path';
-import { base } from '$app/paths';
 import markdownToHtml from './markdown';
 
 const PLAYERS_FILE_DIR = 'src/posts/players';
@@ -27,7 +26,7 @@ const getPlayerMD = async (slug: string, basePath = ''): Promise<PlayerResult> =
 
 	return {
 		content,
-		slug: join(base, basePath, 'players', slug),
+		slug: join(basePath, 'players', slug),
 		data
 	};
 };

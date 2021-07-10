@@ -25,7 +25,7 @@ export interface IndexGetResult {
 }
 
 export const get: RequestHandler = async ({ params }) => {
-	const players = await getPlayers(params.campaign);
+	const players = await getPlayers(`/${params.campaign}`);
 
 	const body = JSON.stringify({ players: [...players] });
 
