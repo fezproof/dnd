@@ -20,7 +20,7 @@
 		<div class="title-container">
 			<div class="title">
 				<h2 class={`mb-4 ${font}`}>{title}</h2>
-				<a href={`${base}${link}`} class={`${classes['primary-button']} link`}>Enter</a>
+				<a href={`${base}${link}`} class={classes['primary-button']}>Enter</a>
 			</div>
 		</div>
 	</div>
@@ -101,14 +101,5 @@
 	.campaign-link:hover .title,
 	.campaign-link:focus-within .title {
 		@apply opacity-100;
-	}
-
-	.link {
-		@apply hidden;
-	}
-
-	.campaign-link:hover .link,
-	.campaign-link:focus-within .link {
-		@apply inline-block;
 	}
 </style>

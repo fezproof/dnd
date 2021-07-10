@@ -31,7 +31,7 @@
 		class="absolute inset-0 h-full w-full object-cover"
 	/>
 	<div
-		class="bg-gradient-to-b from-transparent via-green-main/40 to-green-main h-full w-full absolute inset-0"
+		class="bg-gradient-to-b from-transparent via-black/40 to-black h-full w-full absolute inset-0"
 	/>
 </div>
 

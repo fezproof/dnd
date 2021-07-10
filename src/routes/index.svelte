@@ -19,7 +19,7 @@
 	export let campaigns: CampaignData[];
 </script>
 
-<main class="mt-40 flex-1 px-8 pb-8 flex w-full items-stretch justify-center">
+<main class="flex-1 flex w-full items-stretch justify-center">
 	<ShardsContainer>
 		{#each campaigns as campaign (campaign.link)}
 			<ShardItem fixed {...campaign} />
