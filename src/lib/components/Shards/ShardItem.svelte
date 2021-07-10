@@ -3,7 +3,7 @@
 	import classes from '$lib/styles/button.module.css';
 
 	export let fixed: boolean = false;
-	const absolute = !fixed;
+	let absolute = !fixed;
 
 	export let image: string;
 	export let link: string;
@@ -12,21 +12,21 @@
 </script>
 
 <div class="campaign-link clip">
+	<div class="top-0 right-0 bottom-0 left-0" class:fixed class:absolute>
+		<img src={`${base}${image}`} alt={title} class="object-cover h-full w-full" />
+		<div class="tint" />
+	</div>
 	<div class="title-container">
 		<div class="title">
 			<h2 class={`mb-4 ${font}`}>{title}</h2>
 			<a href={`${base}${link}`} class={classes['primary-button']}>Enter</a>
 		</div>
 	</div>
-	<div class="inset-0 z-[-1]" class:fixed class:absolute>
-		<img src={`${base}${image}`} alt={title} class="object-cover h-full w-full" />
-		<div class="tint" />
-	</div>
 </div>
 
 <style lang="postcss">
 	.campaign-link {
-		@apply mb-2 last:mb-0 md:mb-0 md:mr-2 md:last:mr-0 h-full w-full transition-all outline-none flex-[1] overflow-x-hidden;
+		@apply mb-2 last:mb-0 md:mb-0 md:mr-2 md:last:mr-0 h-full w-full transition-all outline-none flex-[1] overflow-hidden;
 	}
 
 	.campaign-link:hover,
@@ -35,7 +35,7 @@
 	}
 
 	.tint {
-		@apply absolute inset-0 h-full w-full bg-black opacity-0 transition-opacity;
+		@apply absolute top-0 right-0 bottom-0 left-0 h-full w-full bg-black opacity-0 transition-opacity;
 	}
 
 	.campaign-link:hover .tint,
@@ -89,7 +89,7 @@
 		@apply h-full relative overflow-hidden;
 	}
 	.title {
-		@apply absolute inset-0 flex flex-col items-center justify-center text-6xl text-center font-extrabold uppercase px-20 opacity-0 transition-opacity w-80 mx-auto;
+		@apply absolute top-0 right-0 bottom-0 left-0 flex flex-col items-center justify-center text-6xl text-center font-extrabold uppercase px-20 opacity-0 transition-opacity w-80 mx-auto;
 	}
 
 	.campaign-link:hover .title,

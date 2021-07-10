@@ -28,10 +28,10 @@
 	<img
 		src={`${base}/eos-rising.jpg`}
 		alt="eos rising hero"
-		class="absolute inset-0 h-full w-full object-cover"
+		class="absolute top-0 right-0 bottom-0 left-0 h-full w-full object-cover"
 	/>
 	<div
-		class="bg-gradient-to-b from-transparent via-black/40 to-black h-full w-full absolute inset-0"
+		class="bg-gradient-to-b from-transparent via-black/40 to-black h-full w-full absolute top-0 right-0 bottom-0 left-0"
 	/>
 </div>
 
