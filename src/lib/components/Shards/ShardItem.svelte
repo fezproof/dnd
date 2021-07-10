@@ -11,11 +11,15 @@
 	export let font: string;
 </script>
 
-<div class="campaign-link bg-red-500 clip">
-	<!-- <div class="top-0 right-0 bottom-0 left-0" class:fixed class:absolute>
-		<img src={`${base}${image}`} alt={title} class="object-cover h-full w-full" />
-		<div class="tint" />
-	</div> -->
+<div class="campaign-link clip">
+	<div
+		class="top-0 right-0 bottom-0 left-0 pointer-events-none bg-red-500"
+		class:fixed
+		class:absolute
+	>
+		<!-- <img src={`${base}${image}`} alt={title} class="object-cover h-full w-full" /> -->
+		<!-- <div class="tint" /> -->
+	</div>
 	<div class="title-container">
 		<div class="title">
 			<h2 class={`mb-4 ${font}`}>{title}</h2>
@@ -26,7 +30,7 @@
 
 <style lang="postcss">
 	.campaign-link {
-		@apply mb-2 last:mb-0 md:mb-0 md:mr-2 md:last:mr-0 h-full w-full transition-all outline-none flex-[1] overflow-hidden;
+		@apply mb-2 last:mb-0 md:mb-0 md:mr-2 md:last:mr-0 h-full w-full transition-all outline-none flex-[1];
 	}
 
 	.campaign-link:hover,
