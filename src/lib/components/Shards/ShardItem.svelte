@@ -11,7 +11,7 @@
 	export let font: string;
 </script>
 
-<div class="campaign-link bg-red-500">
+<div class="campaign-link bg-red-500 clip">
 	<!-- <div class="top-0 right-0 bottom-0 left-0" class:fixed class:absolute>
 		<img src={`${base}${image}`} alt={title} class="object-cover h-full w-full" />
 		<div class="tint" />
