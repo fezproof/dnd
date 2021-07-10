@@ -11,33 +11,27 @@
 	export let font: string;
 </script>
 
-<div class="campaign-link left">
-	<div class="image-clip clip" tabindex="0">
-		<div class="inset-0" class:fixed class:absolute>
-			<img src={`${base}${image}`} alt={title} class="object-cover h-full w-full" />
-			<div class="tint" />
-		</div>
-		<div class="title-container">
-			<div class="title">
-				<h2 class={`mb-4 ${font}`}>{title}</h2>
-				<a href={`${base}${link}`} class={classes['primary-button']}>Enter</a>
-			</div>
+<div class="campaign-link image-clip clip">
+	<div class="inset-0" class:fixed class:absolute>
+		<img src={`${base}${image}`} alt={title} class="object-cover h-full w-full" />
+		<div class="tint" />
+	</div>
+	<div class="title-container">
+		<div class="title">
+			<h2 class={`mb-4 ${font}`}>{title}</h2>
+			<a href={`${base}${link}`} class={classes['primary-button']}>Enter</a>
 		</div>
 	</div>
 </div>
 
 <style lang="postcss">
 	.campaign-link {
-		@apply mb-2 last:mb-0 md:mb-0 md:mr-2 md:last:mr-0 h-full w-full transition-all outline-none flex-[1];
+		@apply mb-2 last:mb-0 md:mb-0 md:mr-2 md:last:mr-0 h-full w-full transition-all outline-none flex-[1] overflow-x-hidden;
 	}
 
 	.campaign-link:hover,
 	.campaign-link:focus-within {
 		flex: 1 1 50%;
-	}
-
-	.image-clip {
-		@apply h-full w-full overflow-x-hidden;
 	}
 
 	.tint {
@@ -54,7 +48,7 @@
 	}
 
 	@media (min-width: 768px) {
-		.campaign-link:nth-child(even) .clip {
+		.clip:nth-child(even) {
 			clip-path: polygon(
 				-8rem 0,
 				100% 0,
@@ -66,7 +60,7 @@
 			);
 		}
 
-		.campaign-link:nth-child(odd) .clip {
+		.clip:nth-child(odd) {
 			clip-path: polygon(
 				0 0,
 				calc(100% - 8rem) 0,
@@ -78,15 +72,15 @@
 			);
 		}
 
-		.campaign-link:first-child .clip {
+		.clip:first-child {
 			clip-path: polygon(0 0, calc(100% - 8rem) 0, calc(100% + 5rem) 71%, 100% 100%, 0 100%);
 		}
 
-		.campaign-link:last-child .clip {
+		.clip:last-child {
 			clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, -1rem 75%, -6rem 40%);
 		}
 
-		.campaign-link:last-child:nth-child(even) .clip {
+		.clip:last-child:nth-child(even) {
 			clip-path: polygon(-8rem 0, 100% 0, 100% 100%, 0 100%, 5rem 71%);
 		}
 	}
