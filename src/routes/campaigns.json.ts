@@ -1,32 +1,29 @@
+import getCampaignMD, { CampaignResult, CAMPAIGNS_FILE_DIR } from '$lib/getCampaignMD';
 import type { RequestHandler } from '@sveltejs/kit';
+import { promises as fs } from 'fs';
 
-export interface CampaignData {
-	image: string;
-	link: string;
-	title: string;
-	font: string;
+export interface CampaignsResult {
+	campaigns: CampaignResult[];
 }
 
-export interface CampaignResult {
-	campaigns: CampaignData[];
-}
+const getCampaigns = async () => {
+	const campaignFiles = await fs.readdir(CAMPAIGNS_FILE_DIR);
+
+	const campaigns = await Promise.all(
+		campaignFiles
+			.filter((fileName) => /.+\.md$/.test(fileName))
+			.map(async (fileName) => {
+				const slug = fileName.replace(/\.md$/, '');
+
+				return await getCampaignMD(slug);
+			})
+	);
+
+	return campaigns;
+};
 
 export const get: RequestHandler = async () => {
-	const campaigns: CampaignData[] = [
-		{ image: '/eos-rising.jpg', link: '/eos-rising', title: 'Eos Rising', font: 'font-eos' },
-		{
-			image: '/hunters-arcane.jpg',
-			link: '/hunters-arcane',
-			title: 'Hunters of the Arcane',
-			font: 'font-hunters'
-		},
-		{
-			image: '/unfortunate.jpg',
-			link: '/unfortuante',
-			title: 'A series of Unfortunate Events',
-			font: 'font-unfortunate'
-		}
-	];
+	const campaigns = await getCampaigns();
 
 	const body = JSON.stringify({ campaigns });
 

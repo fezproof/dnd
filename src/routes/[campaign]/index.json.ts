@@ -1,3 +1,4 @@
+import getCampaignMD, { CampaignResult } from '$lib/getCampaignMD';
 import getPlayerMD, { PlayerResult } from '$lib/getPlayerMD';
 import type { RequestHandler } from '@sveltejs/kit';
 import { promises as fs } from 'fs';
@@ -22,12 +23,14 @@ const getPlayers = async (base: string) => {
 
 export interface IndexGetResult {
 	players: PlayerResult[];
+	campaign: CampaignResult;
 }
 
 export const get: RequestHandler = async ({ params }) => {
 	const players = await getPlayers(`/${params.campaign}`);
+	const campaign = await getCampaignMD(params.campaign);
 
-	const body = JSON.stringify({ players: [...players] });
+	const body = JSON.stringify({ players, campaign });
 
 	return { body };
 };

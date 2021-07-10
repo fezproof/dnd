@@ -16,12 +16,12 @@ const processor = unified()
 
 const markdownToHtml = async <T extends { [key: string]: unknown }>(
 	file: string
-): Promise<{ content: string; data: T }> => {
-	const { content, data } = matter(file);
+): Promise<{ content: string; data: T; excerpt: string }> => {
+	const { content, data, excerpt } = matter(file, { excerpt: true });
 
 	const parsedHtml = await processor.process(content);
 
-	return { content: String(parsedHtml), data: data as T };
+	return { content: String(parsedHtml), data: data as T, excerpt: excerpt };
 };
 
 export default markdownToHtml;

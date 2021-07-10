@@ -17,7 +17,7 @@ export interface PlayerResult {
 	data: PlayerData;
 }
 
-const getPlayerMD = async (slug: string, basePath = ''): Promise<PlayerResult> => {
+const getPlayerMD = async (slug: string, basePath = '/'): Promise<PlayerResult> => {
 	const fileContents = await fs.readFile(join(PLAYERS_FILE_DIR, slug.concat('.md')), {
 		encoding: 'utf8'
 	});
