@@ -24,31 +24,33 @@
 	const { players } = result;
 </script>
 
-<div class="absolute top-0 left-0 right-0 z-[-1] h-full w-full">
-	<img
-		src={`${base}/eos-rising.jpg`}
-		alt="eos rising hero"
-		class="absolute top-0 right-0 bottom-0 left-0 h-full w-full object-cover"
-	/>
-	<div
-		class="bg-gradient-to-b from-transparent via-black/40 to-black h-full w-full absolute top-0 right-0 bottom-0 left-0"
-	/>
-</div>
+<header>
+	<div class="absolute top-0 left-0 right-0 z-[-1] h-full w-full">
+		<img
+			src={`${base}/eos-rising.jpg`}
+			alt="eos rising hero"
+			class="absolute top-0 right-0 bottom-0 left-0 h-full w-full object-cover"
+		/>
+		<div
+			class="bg-gradient-to-b from-transparent via-black/40 to-black h-full w-full absolute top-0 right-0 bottom-0 left-0"
+		/>
+	</div>
 
-<div class="min-h-screen flex flex-col items-center justify-center">
-	<h2
-		class="mt-40 text-4xl md:text-6xl lg:text-7xl font-semibold border-b-8 border-orange-main font-eos mb-8"
-	>
-		Eos Rising
-	</h2>
-	<p class="max-w-prose px-6 mb-6 font-serif text-2xl">
-		Tua amin! khila amin elen sila lumenn omentilmo Tulien. Faina templa lle naa vanima Nadorhuanrim
-		ed' i'ear ar' elenea!. Amin feuya ten' lle manke naa i'omentien Saurarea amin irma fion laure
-		sereg. Ai' atar Ithil'quessir lle naa belegohtar asca melloneamin. Avarierea mellon en
-		mellonamin n'ndengina ta ho mereth en draugrim.
-	</p>
-	<a href={`${base}/eos-rising`} class={classes['primary-button']}> Read more </a>
-</div>
+	<div class="min-h-screen flex flex-col items-center justify-center">
+		<h2
+			class="mt-40 text-4xl md:text-6xl lg:text-7xl font-semibold border-b-8 border-orange-main font-eos mb-8"
+		>
+			Eos Rising
+		</h2>
+		<p class="max-w-prose px-6 mb-6 font-serif text-2xl">
+			Tua amin! khila amin elen sila lumenn omentilmo Tulien. Faina templa lle naa vanima
+			Nadorhuanrim ed' i'ear ar' elenea!. Amin feuya ten' lle manke naa i'omentien Saurarea amin
+			irma fion laure sereg. Ai' atar Ithil'quessir lle naa belegohtar asca melloneamin. Avarierea
+			mellon en mellonamin n'ndengina ta ho mereth en draugrim.
+		</p>
+		<a href={`${base}/eos-rising`} class={classes['primary-button']}> Read more </a>
+	</div>
+</header>
 
 <main>
 	<section class="h-screen py-12 flex flex-col">
