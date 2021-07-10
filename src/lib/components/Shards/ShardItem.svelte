@@ -13,7 +13,7 @@
 
 <div class="shard clip relative">
 	<div
-		class={`${fixed ? 'left-0 right-0' : '-left-24 -right-24'} image-container`}
+		class={`${fixed ? 'left-0 right-0' : 'md:-left-24 md:-right-24'} image-container`}
 		class:fixed
 		class:absolute
 	>
@@ -35,7 +35,7 @@
 
 <style lang="postcss">
 	.shard {
-		@apply mb-2 last:mb-0 md:mb-0 md:mr-2 md:last:mr-0 h-full w-full transition-all outline-none flex-[1] min-w-[5rem];
+		@apply mb-2 last:mb-0 md:mb-0 md:mr-2 md:last:mr-0 h-full w-full transition-all outline-none flex-[1] md:min-w-[5rem];
 	}
 
 	.shard:hover,
