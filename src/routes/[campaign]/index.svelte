@@ -47,7 +47,7 @@
 		sereg. Ai' atar Ithil'quessir lle naa belegohtar asca melloneamin. Avarierea mellon en
 		mellonamin n'ndengina ta ho mereth en draugrim.
 	</p>
-	<a href="#" class={classes['primary-button']}> Read more </a>
+	<a href={base} class={classes['primary-button']}> Read more </a>
 </div>
 
 <main>
@@ -56,7 +56,7 @@
 		<div class="flex-1 flex w-full items-stretch justify-center px-8">
 			<ShardsContainer>
 				{#each players as player (player.slug)}
-					<ShardItem font="font-eos" image={player.data.image} link="#" title={player.data.name} />
+					<ShardItem font="font-eos" image={player.data.image} link="" title={player.data.name} />
 				{/each}
 			</ShardsContainer>
 		</div>
