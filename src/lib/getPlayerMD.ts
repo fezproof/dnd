@@ -9,6 +9,7 @@ export type PlayerData = {
 	race: string;
 	level: number;
 	image: string;
+	campaign: string;
 };
 
 export interface PlayerResult {
