@@ -23,6 +23,11 @@
 	const { players, campaign } = result;
 </script>
 
+<svelte:head>
+	<title>Scroll'd: {campaign.data.name}</title>
+	<meta name="description" content={campaign.excerpt} />
+</svelte:head>
+
 <div class={campaign.data.font}>
 	<header>
 		<div class="absolute top-0 left-0 right-0 z-[-1] h-full w-full">

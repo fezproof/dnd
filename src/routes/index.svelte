@@ -18,6 +18,14 @@
 	export let campaigns: CampaignResult[];
 </script>
 
+<svelte:head>
+	<title>Scroll'd</title>
+	<meta
+		name="description"
+		content="Our friend group loves D&D, and this website has been created to help me and my players appriciate and document our home games."
+	/>
+</svelte:head>
+
 <main class="flex-1 flex w-full items-stretch justify-center h-screen">
 	<ShardsContainer>
 		{#each campaigns as campaign (campaign.slug)}
