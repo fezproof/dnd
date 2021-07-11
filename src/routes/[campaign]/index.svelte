@@ -43,11 +43,11 @@
 
 		<div class="min-h-screen flex flex-col items-center justify-center">
 			<h2
-				class="mt-40 text-4xl md:text-6xl lg:text-7xl font-semibold border-b-8 border-orange-main mb-8"
+				class="mt-40 text-4xl md:text-6xl lg:text-7xl font-semibold border-b-8 border-orange-main pb-4 mb-8"
 			>
 				{campaign.data.name}
 			</h2>
-			<p class="max-w-prose px-6 mb-6 font-serif text-2xl">
+			<p class="max-w-prose px-6 mb-6 font-serif text-2xl text-center">
 				{campaign.excerpt}
 			</p>
 			<a href={`${base}${campaign.slug}/info`} class={classes['primary-button']}>Read more</a>
@@ -55,34 +55,47 @@
 	</header>
 
 	<main>
-		<section class="h-screen py-12 flex flex-col">
+		<section class="section flex flex-col">
 			<h3 class="section-heading">The Misfits</h3>
-			<div class="flex-1 flex w-full items-stretch justify-center px-8 mx-auto max-w-screen-2xl">
-				<ShardsContainer>
-					{#each players as player (player.slug)}
-						<ShardItem
-							font={campaign.data.font}
-							image={player.data.image}
-							link={player.slug}
-							title={player.data.name}
-						/>
-					{/each}
-				</ShardsContainer>
-			</div>
+			{#if players.length}
+				<div
+					class="flex-1 h-full flex w-full items-stretch justify-center px-8 mx-auto max-w-screen-2xl"
+				>
+					<ShardsContainer>
+						{#each players as player (player.slug)}
+							<ShardItem
+								font={campaign.data.font}
+								image={player.data.image}
+								link={player.slug}
+								title={player.data.name}
+							/>
+						{/each}
+					</ShardsContainer>
+				</div>
+			{:else}
+				<p class="italic text-lg font-serif max-w-prose mx-auto">Coming soon...</p>
+			{/if}
 		</section>
 
-		<section class="h-96 mx-auto max-w-prose text-center py-12">
+		<section class="section">
 			<h3 class="section-heading">The World</h3>
+			<p class="italic text-lg font-serif max-w-prose mx-auto">Coming soon...</p>
 		</section>
 
-		<section class="h-96 mx-auto max-w-prose text-center py-12">
+		<section class="section">
 			<h3 class="section-heading">Mission Logs</h3>
+			<p class="italic text-lg font-serif max-w-prose mx-auto">Coming soon...</p>
 		</section>
 	</main>
 </div>
 
 <style lang="postcss">
+	.section {
+		@apply min-h-screen mx-auto text-center py-12;
+		scroll-snap-align: start;
+	}
+
 	.section-heading {
-		@apply text-4xl inline-block mx-auto mb-8 font-semibold border-b-8 border-orange-main;
+		@apply text-4xl inline-block mx-auto mb-8 font-semibold border-b-8 border-orange-main pb-2;
 	}
 </style>
