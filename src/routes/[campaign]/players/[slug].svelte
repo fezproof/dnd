@@ -18,6 +18,9 @@
 	export let result: PlayerGetResult;
 </script>
 
-<main class="prose max-w-prose mx-auto text-gray-100 my-8">
+<header class="px-4 max-w-prose mx-auto">
+	<h2 class="mt-40 text-white text-3xl ">{result.player.data.name}</h2>
+</header>
+<main class="prose px-4 max-w-prose mx-auto text-gray-100 my-8">
 	{@html result.player.content}
 </main>
