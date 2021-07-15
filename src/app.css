@@ -9,8 +9,4 @@
 		font-weight: 800;
 		src: url('./fonts/starbirl.ttf');
 	}
-	html {
-		scroll-snap-type: y proximity;
-		scroll-behavior: smooth;
-	}
 }
