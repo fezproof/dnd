@@ -29,7 +29,7 @@
 </svelte:head>
 
 <div class={campaign.data.font}>
-	<header class="scroll-snap">
+	<header>
 		<div class="absolute top-0 left-0 right-0 z-[-1] h-full w-full">
 			<img
 				src={`${base}${campaign.data.image}`}
@@ -90,13 +90,8 @@
 </div>
 
 <style lang="postcss">
-	.scroll-snap {
-		scroll-snap-align: start;
-	}
-
 	.section {
 		@apply min-h-screen mx-auto text-center py-12;
-		scroll-snap-align: start;
 	}
 
 	.section-heading {
