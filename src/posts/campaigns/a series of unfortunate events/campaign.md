@@ -1,7 +1,7 @@
 ---
-name: Hunters of the Arcane
-font: font-hunters
-image: /hunters-arcane.jpg
+name: A Series of Unfortunate Events
+font: font-unfortunate
+image: ./unfortunate.jpg
 ---
 
 Tua amin! khila amin elen sila lumenn omentilmo Tulien. Faina templa lle naa vanima

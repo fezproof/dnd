@@ -1,4 +1,4 @@
-import getPlayerMD, { PlayerResult } from '$lib/getPlayerMD';
+import { getPlayer, PlayerResult } from '$lib/players';
 import type { RequestHandler } from '@sveltejs/kit';
 
 export interface PlayerGetResult {
@@ -6,7 +6,7 @@ export interface PlayerGetResult {
 }
 
 export const get: RequestHandler<{ slug: string }> = async ({ params }) => {
-	const player = await getPlayerMD(params.slug);
+	const player = await getPlayer(params.campaign, params.slug);
 
 	const body = JSON.stringify({ player });
 
