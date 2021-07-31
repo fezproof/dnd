@@ -1,7 +1,7 @@
 ---
 name: Eos Rising
 font: font-eos
-image: ./eos.jpg
+image: eos.jpg
 ---
 
 Tua amin! khila amin elen sila lumenn omentilmo Tulien. Faina templa lle naa vanima

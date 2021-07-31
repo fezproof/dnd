@@ -24,16 +24,16 @@
 </script>
 
 <svelte:head>
-	<title>Scroll'd: {campaign.data.name}</title>
+	<title>Scroll'd: {campaign.name}</title>
 	<meta name="description" content={campaign.excerpt} />
 </svelte:head>
 
-<div class={campaign.data.font}>
+<div class={campaign.font}>
 	<header>
 		<div class="absolute top-0 left-0 right-0 z-[-1] h-full w-full">
 			<img
-				src={`${base}${campaign.data.image}`}
-				alt={`${campaign.data.name} hero`}
+				src={`${base}${campaign.image}`}
+				alt={`${campaign.name} hero`}
 				class="absolute top-0 right-0 bottom-0 left-0 h-full w-full object-cover"
 			/>
 			<div
@@ -45,7 +45,7 @@
 			<h2
 				class="mt-40 text-4xl md:text-6xl lg:text-7xl font-semibold border-b-8 border-orange-main pb-4 mb-8"
 			>
-				{campaign.data.name}
+				{campaign.name}
 			</h2>
 			<p class="max-w-prose px-6 mb-6 font-serif text-2xl text-center">
 				{campaign.excerpt}
@@ -55,7 +55,7 @@
 	</header>
 
 	<main>
-		<section class="section flex flex-col">
+		<!-- <section class="section flex flex-col">
 			<h3 class="section-heading">The Misfits</h3>
 			{#if players.length}
 				<div
@@ -64,7 +64,7 @@
 					<ShardsContainer>
 						{#each players as player (player.slug)}
 							<ShardItem
-								font={campaign.data.font}
+								font={campaign.font}
 								image={player.data.image}
 								link={player.slug}
 								title={player.data.name}
@@ -75,7 +75,7 @@
 			{:else}
 				<p class="italic text-lg font-serif max-w-prose mx-auto">Coming soon...</p>
 			{/if}
-		</section>
+		</section> -->
 
 		<section class="section">
 			<h3 class="section-heading">The World</h3>

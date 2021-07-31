@@ -1,3 +1,4 @@
+import { base } from '$app/paths';
 import { promises as fs } from 'fs';
 import { join } from 'path';
 import markdownToHtml from '../utils/markdown';
@@ -10,10 +11,9 @@ export type CampaignData = {
 	image: string;
 };
 
-export interface CampaignResult {
+export interface CampaignResult extends CampaignData {
 	content: string;
 	slug: string;
-	data: CampaignData;
 	excerpt: string;
 }
 
@@ -24,12 +24,10 @@ const getCampaignMD = async (slug: string): Promise<CampaignResult> => {
 
 	const { content, data, excerpt } = await markdownToHtml<CampaignData>(fileContents);
 
-	const image = join(CAMPAIGNS_FILE_DIR, slug, data.image);
-
 	return {
+		...data,
 		content,
 		slug: join('/', slug),
-		data: { ...data, image },
 		excerpt
 	};
 };

@@ -1,6 +1,11 @@
 type Campaign {
 	slug: ID!
+	link: String!
 	name: String
+	font: ID
+	content: String
+	excerpt: String
+	image: String
 }
 
 type Query {
