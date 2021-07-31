@@ -1,0 +1,9 @@
+type Campaign {
+	slug: ID!
+	name: String
+}
+
+type Query {
+	campaigns: [Campaign]
+	campaign(slug: ID!): Campaign
+}
