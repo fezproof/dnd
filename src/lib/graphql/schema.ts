@@ -17,7 +17,7 @@ export const createSchema = async (): Promise<GraphQLSchema> => {
 export const defaultQuery = `# Try out our API with a query like this:
 query {
 	campaigns {
-    slug
+    id
     name
   }
 }

@@ -15,10 +15,21 @@ export type Scalars = {
 
 export type Campaign = {
   __typename?: 'Campaign';
-  slug: Scalars['ID'];
+  id: Scalars['ID'];
   link?: Maybe<Scalars['String']>;
   name?: Maybe<Scalars['String']>;
   font?: Maybe<Scalars['ID']>;
+  content?: Maybe<Scalars['String']>;
+  excerpt?: Maybe<Scalars['String']>;
+  image?: Maybe<Scalars['String']>;
+  players?: Maybe<Array<Maybe<Player>>>;
+};
+
+export type Player = {
+  __typename?: 'Player';
+  id: Scalars['ID'];
+  link?: Maybe<Scalars['String']>;
+  name?: Maybe<Scalars['String']>;
   content?: Maybe<Scalars['String']>;
   excerpt?: Maybe<Scalars['String']>;
   image?: Maybe<Scalars['String']>;
@@ -28,11 +39,18 @@ export type Query = {
   __typename?: 'Query';
   campaigns?: Maybe<Array<Maybe<Campaign>>>;
   campaign?: Maybe<Campaign>;
+  player?: Maybe<Player>;
+  players?: Maybe<Array<Maybe<Player>>>;
 };
 
 
 export type QueryCampaignArgs = {
-  slug: Scalars['ID'];
+  id: Scalars['ID'];
+};
+
+
+export type QueryPlayerArgs = {
+  id: Scalars['ID'];
 };
 
 
@@ -121,6 +139,7 @@ export type ResolversTypes = {
   Campaign: ResolverTypeWrapper<Campaign>;
   ID: ResolverTypeWrapper<Scalars['ID']>;
   String: ResolverTypeWrapper<Scalars['String']>;
+  Player: ResolverTypeWrapper<Player>;
   Query: ResolverTypeWrapper<{}>;
   Boolean: ResolverTypeWrapper<Scalars['Boolean']>;
 };
@@ -130,15 +149,27 @@ export type ResolversParentTypes = {
   Campaign: Campaign;
   ID: Scalars['ID'];
   String: Scalars['String'];
+  Player: Player;
   Query: {};
   Boolean: Scalars['Boolean'];
 };
 
 export type CampaignResolvers<ContextType = any, ParentType extends ResolversParentTypes['Campaign'] = ResolversParentTypes['Campaign']> = {
-  slug?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
+  id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
   link?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   name?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   font?: Resolver<Maybe<ResolversTypes['ID']>, ParentType, ContextType>;
+  content?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  excerpt?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  image?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  players?: Resolver<Maybe<Array<Maybe<ResolversTypes['Player']>>>, ParentType, ContextType>;
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+};
+
+export type PlayerResolvers<ContextType = any, ParentType extends ResolversParentTypes['Player'] = ResolversParentTypes['Player']> = {
+  id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
+  link?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  name?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   content?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   excerpt?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   image?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
@@ -147,11 +178,14 @@ export type CampaignResolvers<ContextType = any, ParentType extends ResolversPar
 
 export type QueryResolvers<ContextType = any, ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']> = {
   campaigns?: Resolver<Maybe<Array<Maybe<ResolversTypes['Campaign']>>>, ParentType, ContextType>;
-  campaign?: Resolver<Maybe<ResolversTypes['Campaign']>, ParentType, ContextType, RequireFields<QueryCampaignArgs, 'slug'>>;
+  campaign?: Resolver<Maybe<ResolversTypes['Campaign']>, ParentType, ContextType, RequireFields<QueryCampaignArgs, 'id'>>;
+  player?: Resolver<Maybe<ResolversTypes['Player']>, ParentType, ContextType, RequireFields<QueryPlayerArgs, 'id'>>;
+  players?: Resolver<Maybe<Array<Maybe<ResolversTypes['Player']>>>, ParentType, ContextType>;
 };
 
 export type Resolvers<ContextType = any> = {
   Campaign?: CampaignResolvers<ContextType>;
+  Player?: PlayerResolvers<ContextType>;
   Query?: QueryResolvers<ContextType>;
 };
 

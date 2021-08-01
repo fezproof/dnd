@@ -2,6 +2,7 @@
 name: Hunters of the Arcane
 font: font-hunters
 image: hunters-arcane.jpg
+players: []
 ---
 
 Tua amin! khila amin elen sila lumenn omentilmo Tulien. Faina templa lle naa vanima

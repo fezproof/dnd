@@ -1,14 +1,26 @@
-type Campaign {
-	slug: ID!
-	link: String!
+type Player {
+	id: ID!
+	link: String
 	name: String
-	font: ID
 	content: String
 	excerpt: String
 	image: String
 }
 
+type Campaign {
+	id: ID!
+	link: String
+	name: String
+	font: ID
+	content: String
+	excerpt: String
+	image: String
+	players: [Player]
+}
+
 type Query {
 	campaigns: [Campaign]
-	campaign(slug: ID!): Campaign
+	campaign(id: ID!): Campaign
+	player(id: ID!): Player
+	players: [Player]
 }

@@ -2,6 +2,11 @@
 name: Eos Rising
 font: font-eos
 image: eos.jpg
+players:
+  - grub
+  - jericho
+  - roadkill
+  - willabelle
 ---
 
 Tua amin! khila amin elen sila lumenn omentilmo Tulien. Faina templa lle naa vanima

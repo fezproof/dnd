@@ -7,7 +7,7 @@
 		query: `
       query getCampaigns {
         campaigns {
-          slug
+          id
           name
           font
           image
@@ -33,7 +33,7 @@
 
 <main class="flex-1 flex w-full items-stretch justify-center h-screen">
 	<ShardsContainer>
-		{#each campaigns as campaign (campaign.slug)}
+		{#each campaigns as campaign (campaign.id)}
 			<ShardItem
 				fixed
 				font={campaign.font}

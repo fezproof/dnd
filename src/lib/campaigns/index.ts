@@ -1,4 +1,3 @@
-import { base } from '$app/paths';
 import { promises as fs } from 'fs';
 import { join } from 'path';
 import markdownToHtml from '../utils/markdown';
@@ -9,16 +8,17 @@ export type CampaignData = {
 	name: string;
 	font: string;
 	image: string;
+	players: string[];
 };
 
 export interface CampaignResult extends CampaignData {
 	content: string;
-	slug: string;
+	id: string;
 	excerpt: string;
 }
 
-const getCampaignMD = async (slug: string): Promise<CampaignResult> => {
-	const fileContents = await fs.readFile(join(CAMPAIGNS_FILE_DIR, slug, 'campaign.md'), {
+const getCampaignMD = async (id: string): Promise<CampaignResult> => {
+	const fileContents = await fs.readFile(join(CAMPAIGNS_FILE_DIR, id, 'campaign.md'), {
 		encoding: 'utf8'
 	});
 
@@ -27,7 +27,7 @@ const getCampaignMD = async (slug: string): Promise<CampaignResult> => {
 	return {
 		...data,
 		content,
-		slug: join('/', slug),
+		id,
 		excerpt
 	};
 };
@@ -46,8 +46,8 @@ export const getCampaigns = async (): Promise<CampaignResult[]> => {
 	return campaigns;
 };
 
-export const getCampaign = async (slug: string): Promise<CampaignResult> => {
-	const campaign = await getCampaignMD(slug);
+export const getCampaign = async (id: string): Promise<CampaignResult> => {
+	const campaign = await getCampaignMD(id);
 
 	return campaign;
 };

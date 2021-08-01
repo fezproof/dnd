@@ -2,6 +2,7 @@
 name: A series of unfortunate events
 font: font-unfortunate
 image: unfortunate.jpg
+players: []
 ---
 
 Tua amin! khila amin elen sila lumenn omentilmo Tulien. Faina templa lle naa vanima
