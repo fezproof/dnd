@@ -2,9 +2,11 @@
 	import ShardItem from '$lib/components/Shards/ShardItem.svelte';
 	import ShardsContainer from '$lib/components/Shards/ShardsContainer.svelte';
 	import { loadQuery } from '$lib/graphql';
+	import type { Load } from '@sveltejs/kit';
 
-	export const load = loadQuery({
-		query: `
+	export const load: Load = async (params) => {
+		return loadQuery({
+			query: `
       query getCampaigns {
         campaigns {
           id
@@ -15,8 +17,9 @@
         }
       }
     `,
-		variables: () => ({})
-	});
+			variables: () => ({})
+		})(params);
+	};
 </script>
 
 <script lang="ts">

@@ -1,8 +1,10 @@
 <script context="module" lang="ts">
 	import { loadQuery } from '$lib/graphql';
+	import type { Load } from '@sveltejs/kit';
 
-	export const load = loadQuery({
-		query: `
+	export const load: Load = async (params) =>
+		loadQuery({
+			query: `
       query GetPlayer($id: ID!) {
         player(id: $id) {
           id
@@ -12,12 +14,12 @@
         }
       }
     `,
-		variables: ({ playerId }) => {
-			return {
-				id: playerId
-			};
-		}
-	});
+			variables: ({ playerId }) => {
+				return {
+					id: playerId
+				};
+			}
+		})(params);
 </script>
 
 <script lang="ts">
