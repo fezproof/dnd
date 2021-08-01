@@ -2,13 +2,13 @@ import type { Load } from '@sveltejs/kit';
 
 export interface Query {
 	query: string;
-	variables: Record<string, unknown>;
+	variables: (page: Record<string, string>) => Record<string, unknown>;
 }
 
 export const loadQuery = ({ query, variables }: Query): Load => {
-	const load: Load = async ({ fetch }) => {
+	const load: Load = async ({ fetch, page }) => {
 		const response = await fetch('/graphql', {
-			body: JSON.stringify({ query, variables }),
+			body: JSON.stringify({ query, variables: variables(page.params) }),
 			headers: {
 				'Content-Type': 'application/json'
 			},

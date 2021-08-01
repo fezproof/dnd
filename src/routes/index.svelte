@@ -15,7 +15,7 @@
         }
       }
     `,
-		variables: {}
+		variables: () => ({})
 	});
 </script>
 

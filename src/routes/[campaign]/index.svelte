@@ -1,26 +1,38 @@
 <script context="module" lang="ts">
-	import { base } from '$app/paths';
 	import ShardItem from '$lib/components/Shards/ShardItem.svelte';
 	import ShardsContainer from '$lib/components/Shards/ShardsContainer.svelte';
+	import { loadQuery } from '$lib/graphql';
 	import classes from '$lib/styles/button.module.css';
-	import type { Load } from '@sveltejs/kit';
-	import type { IndexGetResult } from './index.json';
 
-	export const load: Load = async ({ fetch, page }) => {
-		const campaign = page.params.campaign;
-
-		const result = await fetch(`${base}/${campaign}.json`).then((r) => r.json());
-
-		return {
-			props: { result }
-		};
-	};
+	export const load = loadQuery({
+		query: `
+      query GetCampaign($id: ID!) {
+        campaign(id: $id) {
+          id
+          name
+          font
+          image
+          excerpt
+          link
+          players {
+            id
+            link
+            image
+            name
+          }
+        }
+      }
+    `,
+		variables: ({ campaign }) => ({
+			id: campaign
+		})
+	});
 </script>
 
 <script lang="ts">
-	export let result: IndexGetResult;
+	export let campaign: any;
 
-	const { players, campaign } = result;
+	const { players } = campaign;
 </script>
 
 <svelte:head>
@@ -32,7 +44,7 @@
 	<header>
 		<div class="absolute top-0 left-0 right-0 z-[-1] h-full w-full">
 			<img
-				src={`${base}${campaign.image}`}
+				src={campaign.image}
 				alt={`${campaign.name} hero`}
 				class="absolute top-0 right-0 bottom-0 left-0 h-full w-full object-cover"
 			/>
@@ -50,24 +62,24 @@
 			<p class="max-w-prose px-6 mb-6 font-serif text-2xl text-center">
 				{campaign.excerpt}
 			</p>
-			<a href={`${base}${campaign.slug}/info`} class={classes['primary-button']}>Read more</a>
+			<a href={`${campaign.link}/info`} class={classes['primary-button']}>Read more</a>
 		</div>
 	</header>
 
 	<main>
-		<!-- <section class="section flex flex-col">
+		<section class="section flex flex-col">
 			<h3 class="section-heading">The Misfits</h3>
-			{#if players.length}
+			{#if players?.length}
 				<div
 					class="flex-1 h-full flex w-full items-stretch justify-center px-8 mx-auto max-w-screen-2xl"
 				>
 					<ShardsContainer>
-						{#each players as player (player.slug)}
+						{#each players as player (player.id)}
 							<ShardItem
 								font={campaign.font}
-								image={player.data.image}
-								link={player.slug}
-								title={player.data.name}
+								image={player.image}
+								link={player.link}
+								title={player.name}
 							/>
 						{/each}
 					</ShardsContainer>
@@ -75,7 +87,7 @@
 			{:else}
 				<p class="italic text-lg font-serif max-w-prose mx-auto">Coming soon...</p>
 			{/if}
-		</section> -->
+		</section>
 
 		<section class="section">
 			<h3 class="section-heading">The World</h3>
