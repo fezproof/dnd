@@ -1,3 +1,4 @@
+import { base } from '$app/paths';
 import type { Load } from '@sveltejs/kit';
 
 export interface Query {
@@ -7,7 +8,7 @@ export interface Query {
 
 export const loadQuery = ({ query, variables }: Query): Load => {
 	const load: Load = async ({ fetch, page }) => {
-		const response = await fetch('/graphql', {
+		const response = await fetch(`${base}/graphql`, {
 			body: JSON.stringify({ query, variables: variables(page.params) }),
 			headers: {
 				'Content-Type': 'application/json'
