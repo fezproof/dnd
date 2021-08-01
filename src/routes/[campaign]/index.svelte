@@ -1,16 +1,11 @@
 <script context="module" lang="ts">
-	import { base } from '$app/paths';
 	import ShardItem from '$lib/components/Shards/ShardItem.svelte';
 	import ShardsContainer from '$lib/components/Shards/ShardsContainer.svelte';
 	import classes from '$lib/styles/button.module.css';
+	import { loadData } from '$lib/utils/queryLoader';
 	import type { Load } from '@sveltejs/kit';
 
-	export const load: Load = async ({
-		fetch,
-		page: {
-			params: { campaign }
-		}
-	}) => fetch(`${base}/${campaign}.json`).then((r) => r.json());
+	export const load: Load = loadData;
 </script>
 
 <script lang="ts">

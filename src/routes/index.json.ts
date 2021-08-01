@@ -16,20 +16,5 @@ export const get: RequestHandler = async () => {
 	`;
 	const variables = {};
 
-	const { data, errors } = await executeQuery({ query, variables });
-
-	if (errors) {
-		return {
-			error: new Error(errors.map(({ message }) => message).join('\\n')),
-			status: 500
-		};
-	}
-
-	const body = JSON.stringify({
-		props: data
-	});
-
-	return {
-		body
-	};
+	return executeQuery({ query, variables });
 };

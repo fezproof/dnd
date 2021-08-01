@@ -1,13 +1,7 @@
 <script context="module" lang="ts">
-	import { base } from '$app/paths';
-	import type { Load } from '@sveltejs/kit';
+	import { loadData } from '$lib/utils/queryLoader';
 
-	export const load: Load = async ({
-		fetch,
-		page: {
-			params: { playerId }
-		}
-	}) => fetch(`${base}/players/${playerId}.json`).then((r) => r.json());
+	export const load = loadData;
 </script>
 
 <script lang="ts">
