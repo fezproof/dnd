@@ -1,1 +1,0 @@
-import{b as a}from"./paths-45dac81d.js";const r=({query:r,variables:s})=>async({fetch:e,page:t})=>{const o=await e(`${a}/graphql`,{body:JSON.stringify({query:r,variables:s(t.params)}),headers:{"Content-Type":"application/json"},method:"POST"}),{data:n,errors:p}=await o.json();return p?{error:new Error(p.map((({message:a})=>a)).join("\\n")),status:500}:{props:n}};export{r as l};
