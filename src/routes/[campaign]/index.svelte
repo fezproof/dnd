@@ -1,34 +1,16 @@
 <script context="module" lang="ts">
+	import { base } from '$app/paths';
 	import ShardItem from '$lib/components/Shards/ShardItem.svelte';
 	import ShardsContainer from '$lib/components/Shards/ShardsContainer.svelte';
-	import { loadQuery } from '$lib/graphql';
 	import classes from '$lib/styles/button.module.css';
 	import type { Load } from '@sveltejs/kit';
 
-	export const load: Load = async (params) =>
-		loadQuery({
-			query: `
-      query GetCampaign($id: ID!) {
-        campaign(id: $id) {
-          id
-          name
-          font
-          image
-          excerpt
-          link
-          players {
-            id
-            link
-            image
-            name
-          }
-        }
-      }
-    `,
-			variables: ({ campaign }) => ({
-				id: campaign
-			})
-		})(params);
+	export const load: Load = async ({
+		fetch,
+		page: {
+			params: { campaign }
+		}
+	}) => fetch(`${base}/${campaign}.json`).then((r) => r.json());
 </script>
 
 <script lang="ts">

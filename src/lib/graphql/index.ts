@@ -1,5 +1,7 @@
 import { base } from '$app/paths';
 import type { Load } from '@sveltejs/kit';
+import { DocumentNode, execute } from 'graphql';
+import { createSchema } from './schema';
 
 export interface Query {
 	query: string;
@@ -32,3 +34,16 @@ export const loadQuery = ({ query, variables }: Query): Load => {
 
 	return load;
 };
+
+export const executeQuery = async ({
+	query,
+	variables
+}: {
+	query: DocumentNode;
+	variables: Record<string, unknown>;
+}): Promise<ReturnType<typeof execute>> =>
+	execute({
+		schema: await createSchema(),
+		document: query,
+		variableValues: variables
+	});

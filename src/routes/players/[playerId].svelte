@@ -1,25 +1,13 @@
 <script context="module" lang="ts">
-	import { loadQuery } from '$lib/graphql';
+	import { base } from '$app/paths';
 	import type { Load } from '@sveltejs/kit';
 
-	export const load: Load = async (params) =>
-		loadQuery({
-			query: `
-      query GetPlayer($id: ID!) {
-        player(id: $id) {
-          id
-          name
-          image
-          content
-        }
-      }
-    `,
-			variables: ({ playerId }) => {
-				return {
-					id: playerId
-				};
-			}
-		})(params);
+	export const load: Load = async ({
+		fetch,
+		page: {
+			params: { playerId }
+		}
+	}) => fetch(`${base}/players/${playerId}.json`).then((r) => r.json());
 </script>
 
 <script lang="ts">
