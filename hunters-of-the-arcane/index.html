@@ -11,20 +11,24 @@
 			rel="stylesheet"
 		/>
 		<link rel="stylesheet" href="https://use.typekit.net/emc8qez.css" />
-		
+		<title>Scroll&#39;d: Hunters of the Arcane</title><meta name="description" content="\nTua amin! khila amin elen sila lumenn omentilmo Tulien. Faina templa lle naa vanima\nNadorhuanrim ed&#39; i&#39;ear ar&#39; elenea!. Amin feuya ten&#39; lle manke naa i&#39;omentien Saurarea amin\nirma fion laure sereg. Ai&#39; atar Ithil&#39;quessir lle naa belegohtar asca melloneamin. Avarierea\nmellon en mellonamin n&#39;ndengina ta ho mereth en draugrim.\n\n" data-svelte="svelte-410ccf">
 
 		
 
-		<link rel="modulepreload" href="/dnd/_app/start-31707309.js">
+		<link rel="modulepreload" href="/dnd/_app/start-2342f2f7.js">
 		<link rel="modulepreload" href="/dnd/_app/chunks/vendor-293ed57d.js">
 		<link rel="modulepreload" href="/dnd/_app/chunks/paths-45dac81d.js">
-		<link rel="modulepreload" href="/dnd/_app/pages/__layout.svelte-b176ca67.js">
-		<link rel="modulepreload" href="/dnd/_app/pages/[campaign]/info.svelte-ab97a759.js">
+		<link rel="modulepreload" href="/dnd/_app/pages/__layout.svelte-a172da52.js">
+		<link rel="modulepreload" href="/dnd/_app/pages/[campaign]/index.svelte-8dd176fe.js">
+		<link rel="modulepreload" href="/dnd/_app/chunks/ShardItem-affba1d6.js">
+		<link rel="modulepreload" href="/dnd/_app/chunks/index-5651ada8.js">
 		<link rel="stylesheet" href="/dnd/_app/assets/start-0826e215.css">
-		<link rel="stylesheet" href="/dnd/_app/assets/pages/__layout.svelte-3631bcee.css">
+		<link rel="stylesheet" href="/dnd/_app/assets/pages/__layout.svelte-82eff187.css">
+		<link rel="stylesheet" href="/dnd/_app/assets/pages/[campaign]/index.svelte-b679264d.css">
+		<link rel="stylesheet" href="/dnd/_app/assets/ShardItem-f40979d6.css">
 
 		<script type="module">
-			import { start } from "/dnd/_app/start-31707309.js";
+			import { start } from "/dnd/_app/start-2342f2f7.js";
 			start({
 				target: document.querySelector("#svelte"),
 				paths: {"base":"/dnd","assets":"/dnd"},
@@ -37,14 +41,14 @@
 					status: 200,
 					error: null,
 					nodes: [
-						import("/dnd/_app/pages/__layout.svelte-b176ca67.js"),
-						import("/dnd/_app/pages/[campaign]/info.svelte-ab97a759.js")
+						import("/dnd/_app/pages/__layout.svelte-a172da52.js"),
+						import("/dnd/_app/pages/[campaign]/index.svelte-8dd176fe.js")
 					],
 					page: {
 						host: location.host, // TODO this is redundant
-						path: "/unfortunate-events/info",
+						path: "/hunters-of-the-arcane",
 						query: new URLSearchParams(""),
-						params: {"campaign":"unfortunate-events"}
+						params: {"campaign":"hunters-of-the-arcane"}
 					}
 				}
 			});
@@ -58,9 +62,32 @@
 <h1 class="text-6xl font-bold">Scroll&#39;d</h1></a></nav>
 
 
+<div class="font-hunters svelte-ju3oiz"><header><div class="absolute top-0 left-0 right-0 z-[-1] h-full w-full"><img src="/dnd/hunters-arcane.jpg" alt="Hunters of the Arcane hero" class="absolute top-0 right-0 bottom-0 left-0 h-full w-full object-cover">
+	<div class="bg-gradient-to-b from-transparent via-black/40 to-black h-full w-full absolute top-0 right-0 bottom-0 left-0"></div></div>
+
+<div class="min-h-screen flex flex-col items-center justify-center"><h2 class="mt-40 text-4xl md:text-6xl lg:text-7xl font-semibold border-b-8 border-orange-main pb-4 mb-8">Hunters of the Arcane</h2>
+	<p class="max-w-prose px-6 mb-6 font-serif text-2xl text-center">
+Tua amin! khila amin elen sila lumenn omentilmo Tulien. Faina templa lle naa vanima
+Nadorhuanrim ed&#39; i&#39;ear ar&#39; elenea!. Amin feuya ten&#39; lle manke naa i&#39;omentien Saurarea amin
+irma fion laure sereg. Ai&#39; atar Ithil&#39;quessir lle naa belegohtar asca melloneamin. Avarierea
+mellon en mellonamin n&#39;ndengina ta ho mereth en draugrim.
+
+</p>
+	<a href="/dnd/hunters-of-the-arcane/info" class="_primary-button_1yxm4_1 svelte-ju3oiz">Read more</a></div></header>
+
+	<main><section class="section flex flex-col svelte-ju3oiz"><h3 class="section-heading svelte-ju3oiz">The Misfits</h3>
+	<p class="italic text-lg font-serif max-w-prose mx-auto">Coming soon...</p></section>
+
+<section class="section svelte-ju3oiz"><h3 class="section-heading svelte-ju3oiz">The World</h3>
+	<p class="italic text-lg font-serif max-w-prose mx-auto">Coming soon...</p></section>
+
+<section class="section svelte-ju3oiz"><h3 class="section-heading svelte-ju3oiz">Mission Logs</h3>
+	<p class="italic text-lg font-serif max-w-prose mx-auto">Coming soon...</p></section></main>
+</div>
 
 
-	
+
+	<script type="application/json" data-type="svelte-data" data-url="/dnd/graphql" data-body="1qecbgy">{"status":200,"statusText":"","headers":{"content-type":"text/plain;charset=UTF-8"},"body":"{\"data\":{\"campaign\":{\"id\":\"hunters-of-the-arcane\",\"name\":\"Hunters of the Arcane\",\"font\":\"font-hunters\",\"image\":\"\u002Fdnd\u002Fhunters-arcane.jpg\",\"excerpt\":\"\\nTua amin! khila amin elen sila lumenn omentilmo Tulien. Faina templa lle naa vanima\\nNadorhuanrim ed' i'ear ar' elenea!. Amin feuya ten' lle manke naa i'omentien Saurarea amin\\nirma fion laure sereg. Ai' atar Ithil'quessir lle naa belegohtar asca melloneamin. Avarierea\\nmellon en mellonamin n'ndengina ta ho mereth en draugrim.\\n\\n\",\"link\":\"\u002Fdnd\u002Fhunters-of-the-arcane\",\"players\":null}}}"}</script>
 </div>
 	</body>
 </html>
