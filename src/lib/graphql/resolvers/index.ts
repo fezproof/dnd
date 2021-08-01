@@ -59,6 +59,13 @@ const resolvers: Resolvers = {
 		},
 		link: ({ id }) => {
 			return path.join('/', base, 'players', id);
+		},
+		image: async ({ id, image }) => {
+			if (image) return path.join(assets, image);
+
+			const { image: imagePath } = await getCampaign(id);
+
+			return path.join(assets, imagePath);
 		}
 	}
 };
