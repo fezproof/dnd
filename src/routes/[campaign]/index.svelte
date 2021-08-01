@@ -1,6 +1,7 @@
 <script context="module" lang="ts">
 	import ShardItem from '$lib/components/Shards/ShardItem.svelte';
 	import ShardsContainer from '$lib/components/Shards/ShardsContainer.svelte';
+	import type { GetCampaignQuery } from '$lib/graphql/generated/operations';
 	import classes from '$lib/styles/button.module.css';
 	import { loadData } from '$lib/utils/queryLoader';
 	import type { Load } from '@sveltejs/kit';
@@ -9,7 +10,7 @@
 </script>
 
 <script lang="ts">
-	export let campaign: any;
+	export let campaign: GetCampaignQuery['campaign'];
 
 	const { players } = campaign;
 </script>

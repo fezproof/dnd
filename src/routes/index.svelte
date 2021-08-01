@@ -2,13 +2,14 @@
 	import { base } from '$app/paths';
 	import ShardItem from '$lib/components/Shards/ShardItem.svelte';
 	import ShardsContainer from '$lib/components/Shards/ShardsContainer.svelte';
+	import type { GetCampaignsQuery } from '$lib/graphql/generated/operations';
 	import type { Load } from '@sveltejs/kit';
 
 	export const load: Load = async ({ fetch }) => fetch(`${base}/index.json`).then((r) => r.json());
 </script>
 
 <script lang="ts">
-	export let campaigns: any[];
+	export let campaigns: GetCampaignsQuery['campaigns'];
 </script>
 
 <svelte:head>

@@ -1,5 +1,6 @@
 overwrite: true
 schema: http://localhost:3000/graphql
+documents: "src/**/!(*.d).{ts,tsx}"
 generates:
   src/lib/graphql/generated/resolvers.ts:
     plugins:
@@ -7,3 +8,10 @@ generates:
       - typescript-resolvers
     config:
       useTypeImports: true
+  src/lib/graphql/generated/operations.ts:
+    config:
+      onlyOperationTypes: true
+      preResolveTypes: true
+    plugins:
+      - typescript
+      - typescript-operations

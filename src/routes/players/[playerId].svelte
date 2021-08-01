@@ -1,11 +1,12 @@
 <script context="module" lang="ts">
+	import type { GetPlayerQuery } from '$lib/graphql/generated/operations';
 	import { loadData } from '$lib/utils/queryLoader';
 
 	export const load = loadData;
 </script>
 
 <script lang="ts">
-	export let player: any;
+	export let player: GetPlayerQuery['player'];
 </script>
 
 <header class="px-4 max-w-prose mx-auto">
