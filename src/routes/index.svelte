@@ -5,7 +5,9 @@
 	import type { GetCampaignsQuery } from '$lib/graphql/generated/operations';
 	import type { Load } from '@sveltejs/kit';
 
-	export const load: Load = async ({ fetch }) => fetch(`${base}/index.json`).then((r) => r.json());
+	export const load: Load = async ({ fetch }) => {
+		return fetch(`${base}/index.json`).then((r) => r.json());
+	};
 </script>
 
 <script lang="ts">

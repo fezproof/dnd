@@ -57,7 +57,7 @@
 						{#each players as player (player.id)}
 							<ShardItem
 								font={campaign.font}
-								image={player.image}
+								image={`${player.image}?width=1000&height=800`}
 								link={player.link}
 								title={player.name}
 							/>

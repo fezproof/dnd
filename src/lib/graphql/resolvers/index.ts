@@ -61,11 +61,11 @@ const resolvers: Resolvers = {
 			return path.join('/', base, 'players', id);
 		},
 		image: async ({ id, image }) => {
-			if (image) return path.join(assets, image);
+			if (image) return path.join('/', base, 'image', image);
 
 			const { image: imagePath } = await getCampaign(id);
 
-			return path.join(assets, imagePath);
+			return path.join('/', base, 'image', imagePath);
 		}
 	}
 };
