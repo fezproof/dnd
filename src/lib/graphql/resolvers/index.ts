@@ -60,12 +60,10 @@ const resolvers: Resolvers = {
 		link: ({ id }) => {
 			return path.join('/', base, 'players', id);
 		},
-		image: async ({ id, image }) => {
-			if (image) return path.join('/', base, 'image', image);
+		image: async ({ id, image }, { width, height }) => {
+			const imagePath = image ?? (await getCampaign(id)).image;
 
-			const { image: imagePath } = await getCampaign(id);
-
-			return path.join('/', base, 'image', imagePath);
+			return path.join('/', base, 'image', `${width}-${height}`, imagePath);
 		}
 	}
 };

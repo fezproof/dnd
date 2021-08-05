@@ -2,9 +2,9 @@ import type { RequestHandler } from '@sveltejs/kit';
 import { promises as fs } from 'fs';
 import sharp from 'sharp';
 
-export const get: RequestHandler = async ({ query, params }) => {
-	const width = parseInt(query.get('width'));
-	const height = parseInt(query.get('height'));
+export const get: RequestHandler = async ({ params }) => {
+	const width = parseInt(params.width);
+	const height = parseInt(params.height);
 
 	const image = await fs.readFile(`src/images/${params.filepath}`);
 

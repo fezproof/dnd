@@ -15,7 +15,7 @@ export const get: RequestHandler = async ({ params: { campaign } }) => {
 				players {
 					id
 					link
-					image
+					image(width: 1000, height: 800)
 					name
 				}
 			}

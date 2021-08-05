@@ -35,6 +35,12 @@ export type Player = {
   image?: Maybe<Scalars['String']>;
 };
 
+
+export type PlayerImageArgs = {
+  width?: Maybe<Scalars['Int']>;
+  height?: Maybe<Scalars['Int']>;
+};
+
 export type Query = {
   __typename?: 'Query';
   campaigns?: Maybe<Array<Maybe<Campaign>>>;
@@ -140,6 +146,7 @@ export type ResolversTypes = {
   ID: ResolverTypeWrapper<Scalars['ID']>;
   String: ResolverTypeWrapper<Scalars['String']>;
   Player: ResolverTypeWrapper<Player>;
+  Int: ResolverTypeWrapper<Scalars['Int']>;
   Query: ResolverTypeWrapper<{}>;
   Boolean: ResolverTypeWrapper<Scalars['Boolean']>;
 };
@@ -150,6 +157,7 @@ export type ResolversParentTypes = {
   ID: Scalars['ID'];
   String: Scalars['String'];
   Player: Player;
+  Int: Scalars['Int'];
   Query: {};
   Boolean: Scalars['Boolean'];
 };
@@ -172,7 +180,7 @@ export type PlayerResolvers<ContextType = any, ParentType extends ResolversParen
   name?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   content?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   excerpt?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
-  image?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  image?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType, RequireFields<PlayerImageArgs, never>>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
