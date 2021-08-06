@@ -10,20 +10,20 @@
 </script>
 
 <script lang="ts">
-	export let campaign: GetCampaignQuery['campaign'];
+	export let campaign: GetCampaignQuery['campaign'] | undefined;
 </script>
 
 <svelte:head>
-	<title>Scroll'd: {campaign.name}</title>
-	<meta name="description" content={campaign.excerpt} />
+	<title>Scroll'd: {campaign?.name}</title>
+	<meta name="description" content={campaign?.excerpt} />
 </svelte:head>
 
-<div class={campaign.font}>
+<div class={campaign?.font}>
 	<header>
 		<div class="absolute top-0 left-0 right-0 z-[-1] h-full w-full">
 			<img
-				src={campaign.image}
-				alt={`${campaign.name} hero`}
+				src={campaign?.image}
+				alt={`${campaign?.name} hero`}
 				class="absolute top-0 right-0 bottom-0 left-0 h-full w-full object-cover"
 			/>
 			<div
@@ -35,12 +35,12 @@
 			<h2
 				class="mt-40 text-4xl md:text-7xl lg:text-8xl xl:text-9xl font-semibold border-b-8 border-orange-main pb-4 mb-8"
 			>
-				{campaign.name}
+				{campaign?.name}
 			</h2>
 			<p class="max-w-prose px-6 mb-6 font-sans text-xl text-center">
-				{campaign.excerpt}
+				{campaign?.excerpt}
 			</p>
-			<a href={`${campaign.link}/info`} class={classes['primary-button']}>Read more</a>
+			<a href={`${campaign?.link}/info`} class={classes['primary-button']}>Read more</a>
 		</div>
 	</header>
 
@@ -54,7 +54,7 @@
 					<ShardsContainer>
 						{#each campaign?.players as player (player.id)}
 							<ShardItem
-								font={campaign.font}
+								font={campaign?.font}
 								image={player.image}
 								link={player.link}
 								title={player.name}
