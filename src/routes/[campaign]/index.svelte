@@ -11,8 +11,6 @@
 
 <script lang="ts">
 	export let campaign: GetCampaignQuery['campaign'];
-
-	const { players, logs } = campaign;
 </script>
 
 <svelte:head>
@@ -49,12 +47,12 @@
 	<main>
 		<section class="section flex flex-col">
 			<h3 class="section-heading">The Misfits</h3>
-			{#if players?.length}
+			{#if campaign?.players?.length}
 				<div
 					class="flex-1 h-full flex w-full items-stretch justify-center px-8 mx-auto max-w-screen-xl"
 				>
 					<ShardsContainer>
-						{#each players as player (player.id)}
+						{#each campaign?.players as player (player.id)}
 							<ShardItem
 								font={campaign.font}
 								image={player.image}
@@ -77,8 +75,8 @@
 		<section class="section">
 			<h3 class="section-heading">Mission Logs</h3>
 
-			{#if logs?.length}
-				{#each logs as log (log.id)}
+			{#if campaign?.logs?.length}
+				{#each campaign?.logs as log (log.id)}
 					<p class="italic text-lg font-serif max-w-prose mx-auto">{log.name}</p>
 				{/each}
 			{:else}
