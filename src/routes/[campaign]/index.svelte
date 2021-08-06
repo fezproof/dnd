@@ -35,11 +35,11 @@
 
 		<div class="min-h-screen flex flex-col items-center justify-center">
 			<h2
-				class="mt-40 text-4xl md:text-6xl lg:text-7xl font-semibold border-b-8 border-orange-main pb-4 mb-8"
+				class="mt-40 text-4xl md:text-7xl lg:text-8xl xl:text-9xl font-semibold border-b-8 border-orange-main pb-4 mb-8"
 			>
 				{campaign.name}
 			</h2>
-			<p class="max-w-prose px-6 mb-6 font-serif text-2xl text-center">
+			<p class="max-w-prose px-6 mb-6 font-sans text-xl text-center">
 				{campaign.excerpt}
 			</p>
 			<a href={`${campaign.link}/info`} class={classes['primary-button']}>Read more</a>
@@ -51,7 +51,7 @@
 			<h3 class="section-heading">The Misfits</h3>
 			{#if players?.length}
 				<div
-					class="flex-1 h-full flex w-full items-stretch justify-center px-8 mx-auto max-w-screen-2xl"
+					class="flex-1 h-full flex w-full items-stretch justify-center px-8 mx-auto max-w-screen-xl"
 				>
 					<ShardsContainer>
 						{#each players as player (player.id)}
@@ -87,6 +87,6 @@
 	}
 
 	.section-heading {
-		@apply text-4xl inline-block mx-auto mb-8 font-semibold border-b-8 border-orange-main pb-2;
+		@apply text-6xl inline-block mx-auto mb-8 font-semibold border-b-8 border-orange-main pb-2;
 	}
 </style>

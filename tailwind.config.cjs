@@ -16,7 +16,8 @@ const config = {
 				}
 			},
 			fontFamily: {
-				serif: ['Abhaya Libre', ...defaultTheme.fontFamily.serif],
+				serif: ["'Trade Winds', cursive", ...defaultTheme.fontFamily.serif],
+				sans: ['Montserrat', ...defaultTheme.fontFamily.sans],
 				eos: ["'Starbirl'", ...defaultTheme.fontFamily.sans],
 				unfortunate: ['chauncy-pro', ...defaultTheme.fontFamily.sans],
 				hunters: ['ccmonstermash', ...defaultTheme.fontFamily.sans]
