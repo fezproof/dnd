@@ -12,6 +12,8 @@ generates:
     config:
       onlyOperationTypes: true
       preResolveTypes: true
+      scalars:
+        Prose: string
     plugins:
       - typescript
       - typescript-operations

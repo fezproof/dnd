@@ -1,8 +1,11 @@
-import { base, assets } from '$app/paths';
+import { assets, base } from '$app/paths';
 import { getCampaign, getCampaigns } from '$lib/campaigns';
-import type { Resolvers } from '../generated/resolvers';
-import { posix as path } from 'path';
+import { getLogs } from '$lib/campaigns/logs';
 import { getPlayer, getPlayers } from '$lib/players';
+import { markdownRawToHtml } from '$lib/utils/markdown';
+import { GraphQLScalarType } from 'graphql';
+import { posix as path } from 'path';
+import type { Resolvers } from '../generated/resolvers';
 
 const resolvers: Resolvers = {
 	Query: {
@@ -51,8 +54,25 @@ const resolvers: Resolvers = {
 				return Promise.all(playerPromises);
 			}
 			return null;
+		},
+		logs: async ({ id }) => {
+			const logResults = await getLogs(id);
+
+			return logResults
+				.filter(({ draft }) => !draft)
+				.map(({ id, content, excerpt, name }) => ({
+					id,
+					date: id,
+					name,
+					content: {
+						excerpt,
+						prose: content,
+						raw: content
+					}
+				}));
 		}
 	},
+
 	Player: {
 		id: ({ id }) => {
 			return id;
@@ -65,7 +85,18 @@ const resolvers: Resolvers = {
 
 			return path.join('/', base, 'image', `${width}-${height}`, imagePath);
 		}
-	}
+	},
+
+	Prose: new GraphQLScalarType({
+		name: 'Prose',
+		description: 'Parsed html prose',
+		// parseValue: async () => {
+		//   return ''
+		// },
+		serialize: async (value) => {
+			return markdownRawToHtml(value);
+		}
+	})
 };
 
 export default resolvers;

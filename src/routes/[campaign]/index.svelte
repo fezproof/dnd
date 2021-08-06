@@ -12,7 +12,7 @@
 <script lang="ts">
 	export let campaign: GetCampaignQuery['campaign'];
 
-	const { players } = campaign;
+	const { players, logs } = campaign;
 </script>
 
 <svelte:head>
@@ -76,7 +76,14 @@
 
 		<section class="section">
 			<h3 class="section-heading">Mission Logs</h3>
-			<p class="italic text-lg font-serif max-w-prose mx-auto">Coming soon...</p>
+
+			{#if logs?.length}
+				{#each logs as log (log.id)}
+					<p class="italic text-lg font-serif max-w-prose mx-auto">{log.name}</p>
+				{/each}
+			{:else}
+				<p class="italic text-lg font-serif max-w-prose mx-auto">Coming soon...</p>
+			{/if}
 		</section>
 	</main>
 </div>

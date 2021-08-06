@@ -14,12 +14,26 @@ const processor = unified()
 	// .use(rehypeFormat)
 	.use(rehypeStringify);
 
+export const markdownRawToHtml = async (rawString: string): Promise<string> => {
+	const parsedHtml = await processor.process(rawString);
+
+	return String(parsedHtml);
+};
+
+export const getMarkdownInfo = <T extends { [key: string]: unknown }>(
+	file: string
+): { data: T; excerpt: string; content: string } => {
+	const { data, excerpt, content } = matter(file, { excerpt: true });
+
+	return { data: data as T, excerpt: excerpt, content };
+};
+
 const markdownToHtml = async <T extends { [key: string]: unknown }>(
 	file: string
 ): Promise<{ content: string; data: T; excerpt: string }> => {
-	const { content, data, excerpt } = matter(file, { excerpt: true });
+	const { content, data, excerpt } = getMarkdownInfo<T>(file);
 
-	const parsedHtml = await processor.process(content);
+	const parsedHtml = await markdownRawToHtml(content);
 
 	return { content: String(parsedHtml), data: data as T, excerpt: excerpt };
 };

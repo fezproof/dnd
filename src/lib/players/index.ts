@@ -1,4 +1,3 @@
-import { CAMPAIGNS_FILE_DIR } from '$lib/campaigns';
 import { promises as fs } from 'fs';
 import { join } from 'path';
 import markdownToHtml from '../utils/markdown';

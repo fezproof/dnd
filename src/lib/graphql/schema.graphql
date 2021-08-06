@@ -1,3 +1,19 @@
+scalar Prose
+
+type Content {
+	excerpt: Prose
+	prose: Prose
+	raw: String
+}
+
+type Log {
+	id: ID!
+	date: String
+	link: String
+	name: String
+	content: Content
+}
+
 type Player {
 	id: ID!
 	link: String
@@ -16,6 +32,7 @@ type Campaign {
 	excerpt: String
 	image: String
 	players: [Player]
+	logs: [Log]
 }
 
 type Query {

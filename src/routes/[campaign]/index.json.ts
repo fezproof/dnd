@@ -18,6 +18,10 @@ export const get: RequestHandler = async ({ params: { campaign } }) => {
 					image(width: 1000, height: 800)
 					name
 				}
+				logs {
+					id
+					name
+				}
 			}
 		}
 	`;
