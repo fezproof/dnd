@@ -22,7 +22,7 @@ export type Campaign = {
   name?: Maybe<Scalars['String']>;
   font?: Maybe<Scalars['ID']>;
   content?: Maybe<Scalars['String']>;
-  excerpt?: Maybe<Scalars['String']>;
+  excerpt?: Maybe<Scalars['Prose']>;
   image?: Maybe<Scalars['String']>;
   players?: Maybe<Array<Maybe<Player>>>;
   logs?: Maybe<Array<Maybe<Log>>>;
@@ -194,7 +194,7 @@ export type CampaignResolvers<ContextType = any, ParentType extends ResolversPar
   name?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   font?: Resolver<Maybe<ResolversTypes['ID']>, ParentType, ContextType>;
   content?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
-  excerpt?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  excerpt?: Resolver<Maybe<ResolversTypes['Prose']>, ParentType, ContextType>;
   image?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   players?: Resolver<Maybe<Array<Maybe<ResolversTypes['Player']>>>, ParentType, ContextType>;
   logs?: Resolver<Maybe<Array<Maybe<ResolversTypes['Log']>>>, ParentType, ContextType>;

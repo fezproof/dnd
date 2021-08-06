@@ -9,14 +9,22 @@ players:
   - willabelle
 ---
 
-Tua amin! khila amin elen sila lumenn omentilmo Tulien. Faina templa lle naa vanima
-Nadorhuanrim ed' i'ear ar' elenea!. Amin feuya ten' lle manke naa i'omentien Saurarea amin
-irma fion laure sereg. Ai' atar Ithil'quessir lle naa belegohtar asca melloneamin. Avarierea
-mellon en mellonamin n'ndengina ta ho mereth en draugrim.
+The calamity has shattered the world. A continent in the sky are all that remains of what is now called Eos, a land divided in two by the "Great Divide".
+
+Eos is a place full of innovation, exploration, and people of all kinds striving to find a purpose. Some find it in the religous empire of the "Lurin Dynasty". Others seek learnings and riches working for the merchant guilds of "Mekros".
 
 ---
 
-Tua amin! khila amin elen sila lumenn omentilmo Tulien. Faina templa lle naa vanima
-Nadorhuanrim ed' i'ear ar' elenea!. Amin feuya ten' lle manke naa i'omentien Saurarea amin
-irma fion laure sereg. Ai' atar Ithil'quessir lle naa belegohtar asca melloneamin. Avarierea
-mellon en mellonamin n'ndengina ta ho mereth en draugrim.
+Eos is a place full of innovation, exploration, and people of all kinds striving to find a purpose. Some find it in the religous empire of the "Lurin Dynasty". Others seek learnings and riches working for the merchant guilds of "Mekros".
+
+Eos is a place full of innovation, exploration, and people of all kinds striving to find a purpose. Some find it in the religous empire of the "Lurin Dynasty". Others seek learnings and riches working for the merchant guilds of "Mekros".
+
+Eos is a place full of innovation, exploration, and people of all kinds striving to find a purpose. Some find it in the religous empire of the "Lurin Dynasty". Others seek learnings and riches working for the merchant guilds of "Mekros".
+
+Eos is a place full of innovation, exploration, and people of all kinds striving to find a purpose. Some find it in the religous empire of the "Lurin Dynasty". Others seek learnings and riches working for the merchant guilds of "Mekros".
+
+Eos is a place full of innovation, exploration, and people of all kinds striving to find a purpose. Some find it in the religous empire of the "Lurin Dynasty". Others seek learnings and riches working for the merchant guilds of "Mekros".
+
+Eos is a place full of innovation, exploration, and people of all kinds striving to find a purpose. Some find it in the religous empire of the "Lurin Dynasty". Others seek learnings and riches working for the merchant guilds of "Mekros".
+
+Eos is a place full of innovation, exploration, and people of all kinds striving to find a purpose. Some find it in the religous empire of the "Lurin Dynasty". Others seek learnings and riches working for the merchant guilds of "Mekros".

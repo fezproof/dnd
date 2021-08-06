@@ -37,8 +37,8 @@
 			>
 				{campaign?.name}
 			</h2>
-			<p class="max-w-prose px-6 mb-6 font-sans text-xl text-center">
-				{campaign?.excerpt}
+			<p class="max-w-prose mb-6 font-sans prose text-white">
+				{@html campaign?.excerpt}
 			</p>
 			<a href={`${campaign?.link}/info`} class={classes['primary-button']}>Read more</a>
 		</div>
