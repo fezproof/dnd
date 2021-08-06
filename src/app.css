@@ -8,4 +8,18 @@
 		font-weight: 800;
 		src: url('./fonts/starbirl.ttf');
 	}
+
+	body::-webkit-scrollbar {
+		@apply w-1;
+	}
+	body {
+		scrollbar-width: thin;
+		scrollbar-color: theme('colors.orange.main') transparent;
+	}
+	body::-webkit-scrollbar-track {
+		background: transparent;
+	}
+	body::-webkit-scrollbar-thumb {
+		@apply bg-orange-main rounded-lg;
+	}
 }
