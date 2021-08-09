@@ -20,16 +20,16 @@
 </svelte:head>
 
 <div class={campaign?.font}>
-	<header>
+	<header class="mb-32 md:mb-56">
 		<CampaignHeroImage
 			imageUrl={campaign?.image}
 			imageAlt={`${campaign?.name} hero`}
 			imageHeight={900}
 			imageWidth={1600}
 		/>
-		<div class="min-h-screen flex flex-col justify-center p-8 md:justify-end items-start">
+		<div class="min-h-screen flex flex-col px-8 pt-28 pb-8 justify-end items-start">
 			<h2
-				class="mt-40 text-4xl md:text-7xl lg:text-8xl xl:text-9xl font-semibold border-b-8 border-orange-main pb-4 mb-8"
+				class="text-4xl md:text-7xl lg:text-8xl xl:text-9xl font-semibold border-b-8 border-orange-main pb-4 mb-8"
 			>
 				{campaign?.name}
 			</h2>
@@ -84,10 +84,10 @@
 
 <style lang="postcss">
 	.section {
-		@apply min-h-screen mx-auto text-center py-12;
+		@apply min-h-screen mx-auto text-center pt-28 pb-12;
 	}
 
 	.section-heading {
-		@apply text-6xl inline-block mx-auto mb-8 font-semibold border-b-8 border-orange-main pb-2;
+		@apply text-3xl md:text-4xl lg:text-5xl inline-block mx-auto mb-8 font-semibold border-b-8 border-orange-main pb-2;
 	}
 </style>
