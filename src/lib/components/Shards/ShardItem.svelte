@@ -46,7 +46,7 @@
 
 	.shard:hover .tint,
 	.shard:focus-within .tint {
-		@apply opacity-40;
+		@apply opacity-60;
 	}
 
 	.clip {

@@ -22,7 +22,7 @@
 	/>
 </svelte:head>
 
-<div class="fixed inset-0 h-full w-full flex pt-24">
+<div class="fixed inset-0 h-full w-full flex pt-24 md:p-0">
 	<main class="flex-1 flex w-full items-stretch justify-center ">
 		<ShardsContainer>
 			{#each campaigns as campaign (campaign.id)}

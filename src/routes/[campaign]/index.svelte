@@ -26,21 +26,23 @@
 		imageHeight={900}
 		imageWidth={1600}
 	/>
-	<div
-		class="min-h-screen flex flex-col pt-28 justify-end items-stretch md:items-start max-w-prose"
-	>
-		<div
-			class="px-8 pt-6 pb-16 bg-gradient-to-t from-black/80 via-black/80 to-transparent md:from-transparent md:via-transparent"
-		>
-			<h2
-				class={`text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold border-b-8 border-orange-main pb-4 mb-8 ${campaign?.font}`}
-			>
-				{campaign?.name}
-			</h2>
-			<p class="mb-8 font-sans prose text-white">
-				{@html campaign?.excerpt}
-			</p>
-			<a href={`${campaign?.link}/info`} class={classes['primary-button']}>Read more</a>
+	<div class="min-h-screen flex flex-col pt-28 justify-end items-stretch">
+		<div class="px-8 pt-10 pb-16 relative">
+			<div class="absolute -top-6 right-0 left-0 bottom-0 h-full w-full flex flex-col z-[-1]">
+				<div class="h-24 w-full bg-gradient-to-t from-black/60 to-transparent" />
+				<div class="flex-1 w-full bg-black/60" />
+			</div>
+			<div class="max-w-prose">
+				<h2
+					class={`text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold border-b-8 border-orange-main pb-4 mb-8 ${campaign?.font}`}
+				>
+					{campaign?.name}
+				</h2>
+				<p class="mb-8 font-sans prose text-white">
+					{@html campaign?.excerpt}
+				</p>
+				<a href={`${campaign?.link}/info`} class={classes['primary-button']}>Read more</a>
+			</div>
 		</div>
 	</div>
 </header>
