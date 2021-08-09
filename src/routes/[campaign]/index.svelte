@@ -16,7 +16,13 @@
 
 <svelte:head>
 	<title>Scroll'd: {campaign?.name}</title>
+	<meta name="title" content={`Scroll'd: ${campaign?.name}`} />
 	<meta name="description" content={campaign?.excerpt} />
+
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content={`Scroll'd: ${campaign?.name}`} />
+	<meta property="og:description" content={campaign?.excerpt} />
+	<meta property="og:image" content={campaign?.image} />
 </svelte:head>
 
 <header>
