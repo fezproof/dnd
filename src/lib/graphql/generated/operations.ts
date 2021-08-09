@@ -19,6 +19,13 @@ export type Scalars = {
 
 
 
+export type GetCampaignInfoQueryVariables = Exact<{
+  id: Scalars['ID'];
+}>;
+
+
+export type GetCampaignInfoQuery = { __typename?: 'Query', campaign?: Maybe<{ __typename?: 'Campaign', id: string, name?: Maybe<string>, font?: Maybe<string>, image?: Maybe<string>, link?: Maybe<string>, content?: Maybe<string> }> };
+
 export type GetCampaignQueryVariables = Exact<{
   id: Scalars['ID'];
 }>;
