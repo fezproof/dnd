@@ -37,7 +37,7 @@
 			>
 				{campaign?.name}
 			</h2>
-			<p class="mb-8 font-sans prose md:prose-lg lg:prose-xl text-white">
+			<p class="mb-8 font-sans prose text-white">
 				{@html campaign?.excerpt}
 			</p>
 			<a href={`${campaign?.link}/info`} class={classes['primary-button']}>Read more</a>
