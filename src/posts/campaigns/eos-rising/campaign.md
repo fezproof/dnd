@@ -3,9 +3,10 @@ name: Eos Rising
 font: font-eos
 image: eos.jpg
 players:
+  - elizabeth
   - grub
-  - jericho
   - roadkill
+  - ruerl
   - willabelle
 ---
 

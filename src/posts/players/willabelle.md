@@ -6,4 +6,4 @@ image: /players/willabelle.jpg
 campaign: /eos-rising
 ---
 
-Coming soon
+Coming soon...

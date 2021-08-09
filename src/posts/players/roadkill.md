@@ -6,4 +6,4 @@ image: /players/roadkill.png
 campaign: /eos-rising
 ---
 
-Coming soon
+Coming soon...

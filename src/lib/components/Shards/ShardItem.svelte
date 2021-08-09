@@ -19,7 +19,14 @@
 		class:fixed
 		class:absolute
 	>
-		<img src={image} alt={title} class="object-cover h-full w-full" class:object-top={absolute} />
+		<img
+			src={image}
+			alt={title}
+			class="object-cover h-full w-full"
+			class:object-top={absolute}
+			width="1000"
+			height="1000"
+		/>
 		<div class="tint" />
 	</div>
 	<div class="title-container">
