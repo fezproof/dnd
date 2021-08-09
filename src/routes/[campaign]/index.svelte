@@ -27,13 +27,13 @@
 			imageHeight={900}
 			imageWidth={1600}
 		/>
-		<div class="min-h-screen flex flex-col items-center justify-center">
+		<div class="min-h-screen flex flex-col justify-center p-8 md:justify-end items-start">
 			<h2
 				class="mt-40 text-4xl md:text-7xl lg:text-8xl xl:text-9xl font-semibold border-b-8 border-orange-main pb-4 mb-8"
 			>
 				{campaign?.name}
 			</h2>
-			<p class="max-w-prose mb-6 font-sans prose text-white">
+			<p class="max-w-prose mb-6 font-sans prose md:prose-lg lg:prose-xl text-white">
 				{@html campaign?.excerpt}
 			</p>
 			<a href={`${campaign?.link}/info`} class={classes['primary-button']}>Read more</a>
