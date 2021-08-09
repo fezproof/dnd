@@ -1,4 +1,5 @@
 <script context="module" lang="ts">
+	import CampaignHeroImage from '$lib/components/CampaignHeroImage.svelte';
 	import ShardItem from '$lib/components/Shards/ShardItem.svelte';
 	import ShardsContainer from '$lib/components/Shards/ShardsContainer.svelte';
 	import type { GetCampaignQuery } from '$lib/graphql/generated/operations';
@@ -20,17 +21,12 @@
 
 <div class={campaign?.font}>
 	<header>
-		<div class="absolute top-0 left-0 right-0 z-[-1] h-full w-full">
-			<img
-				src={campaign?.image}
-				alt={`${campaign?.name} hero`}
-				class="absolute top-0 right-0 bottom-0 left-0 h-full w-full object-cover"
-			/>
-			<div
-				class="bg-gradient-to-b from-transparent via-black/40 to-black h-full w-full absolute top-0 right-0 bottom-0 left-0"
-			/>
-		</div>
-
+		<CampaignHeroImage
+			imageUrl={campaign?.image}
+			imageAlt={`${campaign?.name} hero`}
+			imageHeight={900}
+			imageWidth={1600}
+		/>
 		<div class="min-h-screen flex flex-col items-center justify-center">
 			<h2
 				class="mt-40 text-4xl md:text-7xl lg:text-8xl xl:text-9xl font-semibold border-b-8 border-orange-main pb-4 mb-8"
