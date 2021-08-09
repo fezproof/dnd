@@ -13,7 +13,9 @@
 
 <div class="shard clip relative">
 	<div
-		class={`${fixed ? 'left-0 right-0' : 'md:-left-24 md:-right-24'} image-container`}
+		class={`${
+			fixed ? 'left-0 right-0' : 'md:-left-24 md:-right-24 w-full md:w-auto'
+		} image-container`}
 		class:fixed
 		class:absolute
 	>
