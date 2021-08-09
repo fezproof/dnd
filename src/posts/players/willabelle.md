@@ -2,7 +2,7 @@
 name: Willabelle Earlbaum
 level: 3
 race: Eladrin
-image: /players/willabelle.jpg
+image: /players/willabelle-anime.jpg
 campaign: /eos-rising
 ---
 
