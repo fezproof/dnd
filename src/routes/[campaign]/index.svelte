@@ -45,7 +45,7 @@
 			<h3 class="section-heading">The Misfits</h3>
 			{#if campaign?.players?.length}
 				<div
-					class="flex-1 h-full flex w-full items-stretch justify-center px-8 mx-auto max-w-screen-xl"
+					class="flex-1 h-full flex w-full items-stretch justify-center px-8 mx-auto max-w-screen-2xl"
 				>
 					<ShardsContainer>
 						{#each campaign?.players as player (player.id)}
