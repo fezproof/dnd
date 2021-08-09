@@ -14,12 +14,18 @@
 	}
 	body {
 		scrollbar-width: thin;
-		scrollbar-color: theme('colors.orange.main') transparent;
+		scrollbar-color: theme('colors.orange.main') black;
 	}
 	body::-webkit-scrollbar-track {
-		background: transparent;
+		background: black;
 	}
 	body::-webkit-scrollbar-thumb {
 		@apply bg-orange-main rounded-lg;
+	}
+}
+
+@layer components {
+	.glass {
+		@apply bg-black bg-opacity-50 backdrop-blur-lg border-2 border-transparent bg-clip-padding;
 	}
 }
