@@ -10,7 +10,7 @@ export const get: RequestHandler = async ({ params }) => {
 
 	const data = await sharp(image)
 		.resize({ width: width || undefined, height: height || undefined })
-		.jpeg({ quality: 100 })
+		.jpeg()
 		.toBuffer();
 
 	return {
