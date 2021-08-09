@@ -22,16 +22,18 @@
 	/>
 </svelte:head>
 
-<main class="flex-1 flex w-full items-stretch justify-center h-screen">
-	<ShardsContainer>
-		{#each campaigns as campaign (campaign.id)}
-			<ShardItem
-				fixed
-				font={campaign.font}
-				image={campaign.image}
-				link={campaign.link}
-				title={campaign.name}
-			/>
-		{/each}
-	</ShardsContainer>
-</main>
+<div class="fixed inset-0 h-full w-full flex pt-24">
+	<main class="flex-1 flex w-full items-stretch justify-center ">
+		<ShardsContainer>
+			{#each campaigns as campaign (campaign.id)}
+				<ShardItem
+					fixed
+					font={campaign.font}
+					image={campaign.image}
+					link={campaign.link}
+					title={campaign.name}
+				/>
+			{/each}
+		</ShardsContainer>
+	</main>
+</div>
