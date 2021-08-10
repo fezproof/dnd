@@ -38,13 +38,13 @@
 				<div class="h-24 w-full bg-gradient-to-t from-black/60 to-transparent" />
 				<div class="flex-1 w-full bg-black/60" />
 			</div>
-			<div class="max-w-prose">
+			<div>
 				<h2
-					class={`text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold uppercase border-b-8 border-orange-main pb-4 mb-8 ${campaign?.font}`}
+					class={`inline-block text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold uppercase border-b-8 border-orange-main pb-4 mb-8 ${campaign?.font}`}
 				>
 					{campaign?.name}
 				</h2>
-				<p class="mb-8 font-sans prose text-white">
+				<p class="mb-8 font-sans prose text-white max-w-prose">
 					{@html campaign?.excerpt}
 				</p>
 				<a href={`${campaign?.link}/info`} class={classes['primary-button']}>Read more</a>
