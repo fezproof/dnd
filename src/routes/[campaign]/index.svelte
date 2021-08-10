@@ -40,7 +40,7 @@
 			</div>
 			<div class="max-w-prose">
 				<h2
-					class={`text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold border-b-8 border-orange-main pb-4 mb-8 ${campaign?.font}`}
+					class={`text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold border-b-8 border-orange-main pb-4 mb-8 ${campaign?.font}`}
 				>
 					{campaign?.name}
 				</h2>
