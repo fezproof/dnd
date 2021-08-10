@@ -19,10 +19,10 @@
 	<meta name="title" content={`Scroll'd: ${campaign?.name}`} />
 	<meta name="description" content={campaign?.excerpt} />
 
-	<meta property="og:type" content="website" />
+	<!-- <meta property="og:type" content="website" />
 	<meta property="og:title" content={`Scroll'd: ${campaign?.name}`} />
 	<meta property="og:description" content={campaign?.excerpt} />
-	<meta property="og:image" content={campaign?.image} />
+	<meta property="og:image" content={campaign?.image} /> -->
 </svelte:head>
 
 <header>
@@ -40,7 +40,7 @@
 			</div>
 			<div class="max-w-prose">
 				<h2
-					class={`text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold border-b-8 border-orange-main pb-4 mb-8 ${campaign?.font}`}
+					class={`text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold uppercase border-b-8 border-orange-main pb-4 mb-8 ${campaign?.font}`}
 				>
 					{campaign?.name}
 				</h2>
@@ -96,7 +96,7 @@
 
 <style lang="postcss">
 	.section {
-		@apply min-h-screen mx-auto text-center pt-28 pb-12;
+		@apply min-h-screen mx-auto text-center pt-28 pb-12 uppercase;
 	}
 
 	.section-heading {
