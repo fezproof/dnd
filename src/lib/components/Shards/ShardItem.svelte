@@ -29,10 +29,12 @@
 		/>
 		<div class="tint" />
 	</div>
-	<div class="title-container">
+	<div class="title-container ">
 		<div class="title">
-			<h2 class={`mb-4 ${font}`}>{title}</h2>
-			<a href={link} class={classes['primary-button']}>Enter</a>
+			<div class="title-transition">
+				<h2 class={`title-text ${font}`}>{title}</h2>
+				<a href={link} class={classes['primary-button']}>Enter</a>
+			</div>
 		</div>
 	</div>
 </div>
@@ -45,6 +47,10 @@
 	.shard:hover,
 	.shard:focus-within {
 		flex: 1 1 50%;
+	}
+
+	.shard:focus-within {
+		@apply transition-none;
 	}
 
 	.tint {
@@ -63,9 +69,9 @@
 	@media (min-width: 768px) {
 		.clip:nth-child(even) {
 			clip-path: polygon(
-				-5rem 0,
+				-3.5rem 0,
 				100% 0,
-				calc(100% - 6rem) 40%,
+				calc(100% - 4rem) 40%,
 				calc(100% - 1rem) 75%,
 				100% 100%,
 				0 100%,
@@ -76,25 +82,25 @@
 		.clip:nth-child(odd) {
 			clip-path: polygon(
 				0 0,
-				calc(100% - 5rem) 0,
+				calc(100% - 3.5rem) 0,
 				calc(100% + 3rem) 71%,
 				100% 100%,
 				0 100%,
 				calc(0% - 1rem) 75%,
-				calc(0% - 6rem) 40%
+				calc(0% - 4rem) 40%
 			);
 		}
 
 		.clip:first-child {
-			clip-path: polygon(0 0, calc(100% - 5rem) 0, calc(100% + 3rem) 71%, 100% 100%, 0 100%);
+			clip-path: polygon(0 0, calc(100% - 3.5rem) 0, calc(100% + 3rem) 71%, 100% 100%, 0 100%);
 		}
 
 		.clip:last-child {
-			clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, -1rem 75%, -6rem 40%);
+			clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, -1rem 75%, -4rem 40%);
 		}
 
 		.clip:last-child:nth-child(even) {
-			clip-path: polygon(-5rem 0, 100% 0, 100% 100%, 0 100%, 3rem 71%);
+			clip-path: polygon(-3.5rem 0, 100% 0, 100% 100%, 0 100%, 3rem 71%);
 		}
 	}
 
@@ -109,12 +115,34 @@
 	.title-container {
 		@apply h-full relative overflow-hidden;
 	}
+
+	.title-transition {
+		@apply transition-transform ease-linear delay-75 duration-[0ms] transform translate-y-[100vh];
+	}
+
 	.title {
-		@apply absolute top-0 right-0 bottom-0 left-0 flex flex-col items-center justify-center text-6xl text-center font-extrabold uppercase px-20 opacity-0 transition-opacity w-80 mx-auto;
+		@apply absolute top-0 right-0 bottom-0 left-0 mx-auto px-24 flex flex-col items-center justify-center text-center opacity-0 transition-opacity duration-[0ms] delay-[0ms];
+	}
+
+	.title-text {
+		@apply text-2xl lg:text-5xl xl:text-6xl font-extrabold uppercase mb-4;
+	}
+
+	.shard:hover .title-transition,
+	.shard:focus-within .title-transition {
+		@apply translate-y-0;
+	}
+
+	.shard:focus-within .title-transition {
+		@apply transition-none;
 	}
 
 	.shard:hover .title,
 	.shard:focus-within .title {
-		@apply opacity-100;
+		@apply opacity-100 delay-150 duration-100;
+	}
+
+	.shard:focus-within .title {
+		@apply transition-none;
 	}
 </style>
