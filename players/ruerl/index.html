@@ -6,26 +6,41 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
 		<link
+			rel="preload"
 			href="https://fonts.googleapis.com/css2?family=Trade+Winds&display=swap"
-			rel="stylesheet"
+			as="style"
+			onload="this.onload=null;this.rel='stylesheet'"
 		/>
-		<link rel="stylesheet" href="https://use.typekit.net/emc8qez.css" />
+		<link
+			rel="preload"
+			href="https://use.typekit.net/emc8qez.css"
+			as="style"
+			onload="this.onload=null;this.rel='stylesheet'"
+		/>
+		<noscript>
+			<link
+				href="https://fonts.googleapis.com/css2?family=Trade+Winds&display=swap"
+				rel="stylesheet"
+			/>
+			<link rel="stylesheet" href="https://use.typekit.net/emc8qez.css" />
+		</noscript>
 		
 
 		
 
-		<link rel="modulepreload" href="/dnd/_app/start-4b8e6783.js">
+		<link rel="modulepreload" href="/dnd/_app/start-03447156.js">
 		<link rel="modulepreload" href="/dnd/_app/chunks/vendor-bb4603cc.js">
 		<link rel="modulepreload" href="/dnd/_app/chunks/paths-45dac81d.js">
-		<link rel="modulepreload" href="/dnd/_app/pages/__layout.svelte-131ee95a.js">
+		<link rel="modulepreload" href="/dnd/_app/pages/__layout.svelte-249b8cb5.js">
 		<link rel="modulepreload" href="/dnd/_app/pages/players/[playerId].svelte-b7a5b4e2.js">
 		<link rel="modulepreload" href="/dnd/_app/chunks/queryLoader-adc3bc9e.js">
 		<link rel="stylesheet" href="/dnd/_app/assets/start-0826e215.css">
-		<link rel="stylesheet" href="/dnd/_app/assets/pages/__layout.svelte-8b01fd90.css">
+		<link rel="stylesheet" href="/dnd/_app/assets/pages/__layout.svelte-6597c0be.css">
 
 		<script type="module">
-			import { start } from "/dnd/_app/start-4b8e6783.js";
+			import { start } from "/dnd/_app/start-03447156.js";
 			start({
 				target: document.querySelector("#svelte"),
 				paths: {"base":"/dnd","assets":"/dnd"},
@@ -38,7 +53,7 @@
 					status: 200,
 					error: null,
 					nodes: [
-						import("/dnd/_app/pages/__layout.svelte-131ee95a.js"),
+						import("/dnd/_app/pages/__layout.svelte-249b8cb5.js"),
 						import("/dnd/_app/pages/players/[playerId].svelte-b7a5b4e2.js")
 					],
 					page: {
