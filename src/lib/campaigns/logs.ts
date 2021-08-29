@@ -6,6 +6,7 @@ import { getMarkdownInfo } from '../utils/markdown';
 type LogData = {
 	name: string;
 	draft?: boolean;
+	image?: string;
 };
 
 interface LogResult extends LogData {
@@ -33,9 +34,9 @@ const getLogMD = async (campaignId: string, logId: string): Promise<LogResult> =
 };
 
 export const getLog = async (campaignId: string, logId: string): Promise<LogResult> => {
-	const { content, excerpt, name } = await getLogMD(campaignId, logId);
+	const result = await getLogMD(campaignId, logId);
 
-	return { content, excerpt, id: logId, name };
+	return result;
 };
 
 export const getLogs = async (campaignId: string): Promise<LogResult[]> => {

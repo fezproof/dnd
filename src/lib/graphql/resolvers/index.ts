@@ -90,6 +90,11 @@ const resolvers: Resolvers = {
 		content: async ({ id, campaign: { id: campaignId } }) => {
 			const { content, excerpt } = await getLog(campaignId, id);
 			return { excerpt, prose: content, raw: content };
+		},
+		image: async ({ id, campaign: { id: campaignId } }, { width, height }) => {
+			const imagePath = (await getLog(campaignId, id)).image;
+
+			return path.join('/', base, 'image', `${width}-${height}`, imagePath);
 		}
 	},
 
