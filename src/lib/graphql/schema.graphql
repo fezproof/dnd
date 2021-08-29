@@ -40,6 +40,7 @@ type Campaign {
 type Query {
 	campaigns: [Campaign]
 	campaign(id: ID!): Campaign
+	log(id: ID!, campaignId: ID!): Log
 	player(id: ID!): Player
 	players: [Player]
 }

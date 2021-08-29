@@ -23,6 +23,9 @@ const resolvers: Resolvers = {
 				players: campaignData.players.map((id) => ({ id }))
 			};
 		},
+		log: async (_, { id, campaignId }) => {
+			return { id, campaign: { id: campaignId } };
+		},
 		players: async () => {
 			const playersData = await getPlayers();
 			return playersData;

@@ -66,6 +66,7 @@ export type Query = {
   __typename?: 'Query';
   campaigns?: Maybe<Array<Maybe<Campaign>>>;
   campaign?: Maybe<Campaign>;
+  log?: Maybe<Log>;
   player?: Maybe<Player>;
   players?: Maybe<Array<Maybe<Player>>>;
 };
@@ -73,6 +74,12 @@ export type Query = {
 
 export type QueryCampaignArgs = {
   id: Scalars['ID'];
+};
+
+
+export type QueryLogArgs = {
+  id: Scalars['ID'];
+  campaignId: Scalars['ID'];
 };
 
 
@@ -236,6 +243,7 @@ export interface ProseScalarConfig extends GraphQLScalarTypeConfig<ResolversType
 export type QueryResolvers<ContextType = any, ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']> = {
   campaigns?: Resolver<Maybe<Array<Maybe<ResolversTypes['Campaign']>>>, ParentType, ContextType>;
   campaign?: Resolver<Maybe<ResolversTypes['Campaign']>, ParentType, ContextType, RequireFields<QueryCampaignArgs, 'id'>>;
+  log?: Resolver<Maybe<ResolversTypes['Log']>, ParentType, ContextType, RequireFields<QueryLogArgs, 'id' | 'campaignId'>>;
   player?: Resolver<Maybe<ResolversTypes['Player']>, ParentType, ContextType, RequireFields<QueryPlayerArgs, 'id'>>;
   players?: Resolver<Maybe<Array<Maybe<ResolversTypes['Player']>>>, ParentType, ContextType>;
 };
