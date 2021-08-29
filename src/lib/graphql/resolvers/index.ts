@@ -1,6 +1,6 @@
 import { assets, base } from '$app/paths';
 import { getCampaign, getCampaigns } from '$lib/campaigns';
-import { getLogs } from '$lib/campaigns/logs';
+import { getLog, getLogs } from '$lib/campaigns/logs';
 import { getPlayer, getPlayers } from '$lib/players';
 import { markdownRawToHtml } from '$lib/utils/markdown';
 import { GraphQLScalarType } from 'graphql';
@@ -60,16 +60,33 @@ const resolvers: Resolvers = {
 
 			return logResults
 				.filter(({ draft }) => !draft)
-				.map(({ id, content, excerpt, name }) => ({
-					id,
-					date: id,
-					name,
-					content: {
-						excerpt,
-						prose: content,
-						raw: content
-					}
+				.map(({ id: logId }) => ({
+					id: logId,
+					campaign: { id }
 				}));
+		}
+	},
+
+	Log: {
+		id: ({ id }) => {
+			return id;
+		},
+		campaign: ({ campaign: { id } }) => {
+			return { id };
+		},
+		link: ({ id: logId, campaign: { id: campaignId } }) => {
+			return path.join('/', base, campaignId, 'logs', logId);
+		},
+		name: async ({ id, campaign: { id: campaignId } }) => {
+			const { name } = await getLog(campaignId, id);
+			return name;
+		},
+		date: async ({ id }) => {
+			return id;
+		},
+		content: async ({ id, campaign: { id: campaignId } }) => {
+			const { content, excerpt } = await getLog(campaignId, id);
+			return { excerpt, prose: content, raw: content };
 		}
 	},
 

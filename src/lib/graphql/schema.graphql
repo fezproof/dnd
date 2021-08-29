@@ -12,6 +12,8 @@ type Log {
 	link: String
 	name: String
 	content: Content
+
+	campaign: Campaign!
 }
 
 type Player {

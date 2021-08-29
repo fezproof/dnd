@@ -42,6 +42,7 @@ export type Log = {
   link?: Maybe<Scalars['String']>;
   name?: Maybe<Scalars['String']>;
   content?: Maybe<Content>;
+  campaign: Campaign;
 };
 
 export type Player = {
@@ -214,6 +215,7 @@ export type LogResolvers<ContextType = any, ParentType extends ResolversParentTy
   link?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   name?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   content?: Resolver<Maybe<ResolversTypes['Content']>, ParentType, ContextType>;
+  campaign?: Resolver<ResolversTypes['Campaign'], ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
