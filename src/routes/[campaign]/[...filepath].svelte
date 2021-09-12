@@ -10,7 +10,6 @@
 
 <script lang="ts">
 	export let result: any;
-	console.log(result);
 </script>
 
 <main class="mt-24 prose max-w-prose mx-auto">{@html result.content}</main>
