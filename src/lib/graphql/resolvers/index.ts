@@ -20,7 +20,7 @@ const resolvers: Resolvers = {
 			const campaignData = await getCampaign(id);
 			return {
 				...campaignData,
-				players: campaignData.players.map((id) => ({ id }))
+				players: campaignData.players.map((id) => ({ id: id.replace('players/', '') }))
 			};
 		},
 		log: async (_, { id, campaignId }) => {
