@@ -1,15 +1,15 @@
 {
   "main": {
-    "id": "60ceaa676503bf9a",
+    "id": "432b1b84929abd72",
     "type": "split",
     "children": [
       {
-        "id": "66975e957a88cb74",
+        "id": "a7eeaf47e582fd3f",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "players/grub.md",
+            "file": "campaigns/eos-rising/places/mekros.md",
             "mode": "source"
           }
         }
@@ -18,15 +18,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "c920cca606742ed4",
+    "id": "17f10719c06fcd5b",
     "type": "split",
     "children": [
       {
-        "id": "b4cefde2b0e5e5ee",
+        "id": "c91abf74a1e4ca48",
         "type": "tabs",
         "children": [
           {
-            "id": "d5617b80253c5df3",
+            "id": "b87ef42a8a059067",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -34,12 +34,12 @@
             }
           },
           {
-            "id": "d8d77f368a0977d5",
+            "id": "3d6e65902da0da37",
             "type": "leaf",
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:#Eos",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -55,27 +55,86 @@
     "width": 300
   },
   "right": {
-    "id": "644439c2433e4cf0",
+    "id": "f179bbee49fa864e",
     "type": "split",
     "children": [
       {
-        "id": "993f9705f384d253",
+        "id": "5fbcd1169a497b11",
         "type": "tabs",
         "children": [
           {
-            "id": "90759f71b353d9d4",
+            "id": "a5a7b7101d920528",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {}
+            }
+          }
+        ]
+      },
+      {
+        "id": "9cd88e89c5e6c69e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0cca0f553bbb7b40",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "e768f4ef60587053",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "09fdc6bcaf5fb1db",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "players/grub.md",
+                "file": "campaigns/eos-rising/places/mekros.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
                 "searchQuery": "",
-                "backlinkCollapsed": false,
-                "unlinkedCollapsed": true
+                "backlinkCollapsed": true,
+                "unlinkedCollapsed": false
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "b209deee732e3c60",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "da974addf68a135a",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "campaigns/eos-rising/places/mekros.md",
+                "linksCollapsed": true,
+                "unlinkedCollapsed": false
+              }
+            }
+          },
+          {
+            "id": "071c54e345f107fa",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "campaigns/eos-rising/places/mekros.md"
               }
             }
           }
@@ -83,14 +142,19 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
-  "active": "66975e957a88cb74",
+  "active": "a7eeaf47e582fd3f",
   "lastOpenFiles": [
-    "players/grub.md",
-    "campaigns/eos-rising/eos-rising.md",
-    "templates/Player Template.md",
-    "templates/Untitled.md"
+    "campaigns/eos-rising/places/mekros.md",
+    "campaigns/eos-rising/places/Tattingrath.md",
+    "campaigns/eos-rising/places/Untitled.md",
+    "campaigns/eos-rising/places/bridgetown.md",
+    "campaigns/eos-rising/places/east-kamera.md",
+    "campaigns/eos-rising/places/ellasor.md",
+    "campaigns/eos-rising/places/everstrair.md",
+    "campaigns/eos-rising/places/foghollow.md",
+    "campaigns/eos-rising/places/the-great-divide.md",
+    "campaigns/eos-rising/places/the-lurin-empire.md"
   ]
 }

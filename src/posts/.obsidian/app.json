@@ -1,1 +1,19 @@
-{}
+{
+  "useMarkdownLinks": false,
+  "attachmentFolderPath": "attachments",
+  "newLinkFormat": "absolute",
+  "alwaysUpdateLinks": true,
+  "spellcheck": true,
+  "spellcheckDictionary": [
+    "Everstrair",
+    "Eos",
+    "Ellasor",
+    "Kamera",
+    "Mekros",
+    "Foghollow",
+    "Tattingrath",
+    "Lurin",
+    "Lurin",
+    "Andrius"
+  ]
+}
