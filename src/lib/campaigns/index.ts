@@ -18,7 +18,7 @@ export interface CampaignResult extends CampaignData {
 }
 
 const getCampaignMD = async (id: string): Promise<CampaignResult> => {
-	const fileContents = await fs.readFile(join(CAMPAIGNS_FILE_DIR, id, 'campaign.md'), {
+	const fileContents = await fs.readFile(join(CAMPAIGNS_FILE_DIR, id, `${id}.md`), {
 		encoding: 'utf8'
 	});
 

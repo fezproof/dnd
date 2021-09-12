@@ -1,0 +1,160 @@
+{
+  "main": {
+    "id": "432b1b84929abd72",
+    "type": "split",
+    "children": [
+      {
+        "id": "a7eeaf47e582fd3f",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "campaigns/eos-rising/places/bridgetown.md",
+            "mode": "source"
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "17f10719c06fcd5b",
+    "type": "split",
+    "children": [
+      {
+        "id": "c91abf74a1e4ca48",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b87ef42a8a059067",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "3d6e65902da0da37",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "tag:#City",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "f179bbee49fa864e",
+    "type": "split",
+    "children": [
+      {
+        "id": "5fbcd1169a497b11",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a5a7b7101d920528",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {}
+            }
+          }
+        ]
+      },
+      {
+        "id": "9cd88e89c5e6c69e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0cca0f553bbb7b40",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "e768f4ef60587053",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "09fdc6bcaf5fb1db",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "campaigns/eos-rising/places/bridgetown.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": true,
+                "unlinkedCollapsed": false
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "b209deee732e3c60",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "da974addf68a135a",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "campaigns/eos-rising/places/bridgetown.md",
+                "linksCollapsed": true,
+                "unlinkedCollapsed": false
+              }
+            }
+          },
+          {
+            "id": "071c54e345f107fa",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "campaigns/eos-rising/places/bridgetown.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "active": "a7eeaf47e582fd3f",
+  "lastOpenFiles": [
+    "campaigns/eos-rising/places/bridgetown.md",
+    "campaigns/eos-rising/places/east-kamera.md",
+    "campaigns/eos-rising/places/ellasor.md",
+    "campaigns/eos-rising/places/everstrair.md",
+    "campaigns/eos-rising/places/foghollow.md",
+    "campaigns/eos-rising/places/lions-den.md",
+    "campaigns/eos-rising/places/mekros.md",
+    "campaigns/eos-rising/places/tattingrath.md",
+    "campaigns/eos-rising/eos-rising.md",
+    "attachments/alura_map.png"
+  ]
+}

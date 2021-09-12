@@ -3,8 +3,11 @@ name: Grub
 level: 3
 race: Fulgen
 image: /players/grub.jpg
-campaign: /eos-rising
+campaign: [[eos-rising]]
+alias: [Grub]
 ---
+
+## Excerpt
 
 A shapeless shadow danced across the flagstones in Shira square, the only noise heard is the pitter patter of four tiny paws clambering over the damp cobblestones. The sound of rain on tiled roofs drowning out the only telltale sign of his presence. His bushy tail crests the roof of the most prominent building in the village, giving him a chance to pause and check his surroundings for unaccounted variables. A habit that’s hard to break, as he knows he is unlikely to have missed anything. His pupils dilate to the size of marbles as he struggles to see in the low light of dusk. A myriad of villagers seeking refuge from the rain and one or two priests going about their business. Nothing of concern.
 
@@ -44,4 +47,4 @@ His pace quickened as he departed the shrine's mess hall.
 
 “But for now, I have a debt to pay”, he muttered to himself, his fingers subconsciously caressing the green gemstone in his pouch before retrieving another bamboo shoot to occupy his mouth.
 
-“And it won’t do to keep the Bridgers waiting.”
+“And it won’t do to keep the [[campaigns/eos-rising/organisations/bridger-gang|Bridgers]] waiting.”

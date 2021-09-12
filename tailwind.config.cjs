@@ -21,7 +21,24 @@ const config = {
 				eos: ['ethnocentric', ...defaultTheme.fontFamily.sans],
 				unfortunate: ['chauncy-pro', ...defaultTheme.fontFamily.sans],
 				hunters: ['ccmonstermash', ...defaultTheme.fontFamily.sans]
-			}
+			},
+			typography: (theme) => ({
+				DEFAULT: {
+					css: {
+						color: theme('colors.white'),
+						a: { color: theme('colors.gray.300') },
+						h1: {
+							color: theme('colors.orange.main')
+						},
+						h2: {
+							color: theme('colors.gray.200')
+						},
+						h3: {
+							color: theme('colors.gray.300')
+						}
+					}
+				}
+			})
 		}
 	},
 	plugins: [require('@tailwindcss/typography')]
