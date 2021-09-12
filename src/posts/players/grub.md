@@ -47,4 +47,4 @@ His pace quickened as he departed the shrine's mess hall.
 
 “But for now, I have a debt to pay”, he muttered to himself, his fingers subconsciously caressing the green gemstone in his pouch before retrieving another bamboo shoot to occupy his mouth.
 
-“And it won’t do to keep the Bridgers waiting.”
+“And it won’t do to keep the [[campaigns/eos-rising/organisations/bridger-gang|Bridgers]] waiting.”

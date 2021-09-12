@@ -8,5 +8,5 @@ tags: [Eos, Mekros, Country]
 - Engineering advanced country
 - Has a lot of magical machines
 - Run by the Merchant Guilds
-- Capital city of [[campaigns/eos-rising/places/tattingrath]]
+- Capital city: [[campaigns/eos-rising/places/tattingrath|Tattingrath]]
 - 

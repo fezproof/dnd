@@ -10,4 +10,4 @@ tags: [Eos, Geographical]
 	- [[campaigns/eos-rising/places/bridgetown|Bridgetown]]
 	- Fort Andrius
 	- The Tortoise Mire
-	- Through [[campaigns/eos-rising/places/foghollow|Foghollow]] and [[campaigns/eos-rising/places/ellasor|Ellasor]], using the [[campaigns/eos-rising/places/everstrair]]
+	- Through [[campaigns/eos-rising/places/foghollow|Foghollow]] and [[campaigns/eos-rising/places/ellasor|Ellasor]], using the [[campaigns/eos-rising/places/everstrair|Everstrair]]
