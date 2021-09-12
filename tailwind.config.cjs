@@ -24,9 +24,12 @@ const config = {
 			},
 			typography: (theme) => ({
 				DEFAULT: {
-					color: theme('white'),
 					css: {
+						color: theme('colors.white'),
 						a: { color: theme('colors.gray.300') },
+						h1: {
+							color: theme('colors.orange.main')
+						},
 						h2: {
 							color: theme('colors.gray.200')
 						},
