@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "campaigns/eos-rising/places/bridgetown.md",
+            "file": "campaigns/eos-rising/eos-rising.md",
             "mode": "source"
           }
         }
@@ -99,7 +99,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "campaigns/eos-rising/places/bridgetown.md",
+                "file": "campaigns/eos-rising/eos-rising.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "campaigns/eos-rising/places/bridgetown.md",
+                "file": "campaigns/eos-rising/eos-rising.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -134,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "campaigns/eos-rising/places/bridgetown.md"
+                "file": "campaigns/eos-rising/eos-rising.md"
               }
             }
           }
@@ -146,6 +146,7 @@
   },
   "active": "a7eeaf47e582fd3f",
   "lastOpenFiles": [
+    "campaigns/eos-rising/eos-rising.md",
     "campaigns/eos-rising/places/bridgetown.md",
     "attachments/alura_map.png",
     "attachments/player_default.jpeg",
@@ -154,7 +155,6 @@
     "campaigns/eos-rising/places/west-kamera.md",
     "campaigns/eos-rising/places/the-great-divide.md",
     "campaigns/eos-rising/organisations/flame-lions.md",
-    "campaigns/eos-rising/places/lions-den.md",
-    "campaigns/eos-rising/organisations/bridger-gang.md"
+    "campaigns/eos-rising/places/lions-den.md"
   ]
 }
