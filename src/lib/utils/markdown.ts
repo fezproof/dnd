@@ -6,7 +6,7 @@ import remarkParse from 'remark-parse';
 import remarkRehype from 'remark-rehype';
 import wikiLinkPlugin from 'remark-wiki-link';
 import unified from 'unified';
-import { isArray } from 'lodash';
+import _ from 'lodash';
 
 const processor = unified()
 	.use(remarkParse)
@@ -31,12 +31,12 @@ const handleObsidianLinks = (data: Record<string, any>) => {
 	const entries = Object.entries(data);
 
 	return entries.reduce((result, [key, value]) => {
-		if (!isArray(value)) {
+		if (!_.isArray(value)) {
 			result[key] = value;
 			return result;
 		}
 
-		if (!value.every((innerValue) => isArray(innerValue) && innerValue.every(isArray))) {
+		if (!value.every((innerValue) => _.isArray(innerValue) && innerValue.every(_.isArray))) {
 			result[key] = value;
 			return result;
 		}
