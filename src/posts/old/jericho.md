@@ -42,9 +42,9 @@ His tantalising words lead me on as if intentionally baiting my interest. There�
 
 I ask, keeping my demeanor even. It’s best that this fellow doesn’t realise just how strapped for cash I really am. I’d come a long way by this point, desperate to race towards my destination, but an empty coin pouch and growling stomach worked well to keep my wanderlust at bay.
 
-“It’s easy work. Just need some hired hands to escort some carriages south. They’re heading west to the Dynasty, but only require passage up until the Great Divide.”
+“It’s easy work. Just need some hired hands to escort some carriages south. They’re heading west to the Dynasty, but only require passage up until the [[campaigns/eos-rising/places/great-divide|Great Divide]].”
 
-[[campaigns/eos-rising/places/the-great-divide|The Great Divide]]. A rift of titanic proportions, that even a country bumpkin like myself, had heard of at least once. Of more importance however, this job happened to solve both of my most recent predicaments. The convoy would provide rations and pay for the guards escorting them, but more vitally it would lead me towards the very place that I so eagerly yearned to reach. It was as if Orsoth himself were guiding my path.
+[[campaigns/eos-rising/places/great-divide|The Great Divide]]. A rift of titanic proportions, that even a country bumpkin like myself, had heard of at least once. Of more importance however, this job happened to solve both of my most recent predicaments. The convoy would provide rations and pay for the guards escorting them, but more vitally it would lead me towards the very place that I so eagerly yearned to reach. It was as if Orsoth himself were guiding my path.
 
 The bartender pulled from his pocket a letter that I could only assume to be the job notice in question. I reach my hand out to take it from his grasp.
 

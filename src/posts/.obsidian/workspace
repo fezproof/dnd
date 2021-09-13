@@ -4,12 +4,12 @@
     "type": "split",
     "children": [
       {
-        "id": "a7eeaf47e582fd3f",
+        "id": "bb7bdfca38268d11",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "campaigns/eos-rising/places/bridgetown.md",
+            "file": "campaigns/eos-rising/places/great-divide.md",
             "mode": "source"
           }
         }
@@ -59,15 +59,42 @@
     "type": "split",
     "children": [
       {
-        "id": "5fbcd1169a497b11",
+        "id": "f25017c87fd624dc",
         "type": "tabs",
         "children": [
           {
-            "id": "a5a7b7101d920528",
+            "id": "8ad0aa2aa0913e73",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {}
+              "type": "localgraph",
+              "state": {
+                "file": "campaigns/eos-rising/places/great-divide.md",
+                "options": {
+                  "collapse-filter": false,
+                  "search": "",
+                  "localJumps": 1,
+                  "localBacklinks": true,
+                  "localForelinks": true,
+                  "localInterlinks": false,
+                  "showTags": false,
+                  "showAttachments": false,
+                  "hideUnresolved": false,
+                  "collapse-color-groups": true,
+                  "colorGroups": [],
+                  "collapse-display": false,
+                  "showArrow": false,
+                  "textFadeMultiplier": -3,
+                  "nodeSizeMultiplier": 1,
+                  "lineSizeMultiplier": 1,
+                  "collapse-forces": true,
+                  "centerStrength": 0.820512820512821,
+                  "repelStrength": 10,
+                  "linkStrength": 1,
+                  "linkDistance": 138,
+                  "scale": 0.5087618855792595,
+                  "close": true
+                }
+              }
             }
           }
         ]
@@ -99,7 +126,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "campaigns/eos-rising/places/bridgetown.md",
+                "file": "campaigns/eos-rising/places/great-divide.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +149,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "campaigns/eos-rising/places/bridgetown.md",
+                "file": "campaigns/eos-rising/places/great-divide.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -134,7 +161,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "campaigns/eos-rising/places/bridgetown.md"
+                "file": "campaigns/eos-rising/places/great-divide.md"
               }
             }
           }
@@ -144,17 +171,17 @@
     "direction": "horizontal",
     "width": 300
   },
-  "active": "a7eeaf47e582fd3f",
+  "active": "bb7bdfca38268d11",
   "lastOpenFiles": [
-    "campaigns/eos-rising/places/bridgetown.md",
-    "campaigns/eos-rising/places/east-kamera.md",
-    "campaigns/eos-rising/places/ellasor.md",
-    "campaigns/eos-rising/places/everstrair.md",
-    "campaigns/eos-rising/places/foghollow.md",
-    "campaigns/eos-rising/places/lions-den.md",
+    "campaigns/eos-rising/places/great-divide.md",
     "campaigns/eos-rising/places/mekros.md",
+    "campaigns/eos-rising/places/unholy-matrimony.md",
+    "campaigns/eos-rising/places/west-kamera.md",
     "campaigns/eos-rising/places/tattingrath.md",
-    "campaigns/eos-rising/eos-rising.md",
-    "attachments/alura_map.png"
+    "campaigns/eos-rising/places/lions-den.md",
+    "campaigns/eos-rising/places/foghollow.md",
+    "campaigns/eos-rising/places/east-kamera.md",
+    "campaigns/eos-rising/people/rita-cuffe.md",
+    "campaigns/eos-rising/people/nikolai-saltvik.md"
   ]
 }

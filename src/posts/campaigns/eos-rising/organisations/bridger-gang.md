@@ -7,5 +7,5 @@ tags: [Eos, Criminal, Bridgetown]
 - Largest criminal org in [[campaigns/eos-rising/places/bridgetown|Bridgetown]]
 - Run by a unknown leader
 - Has an inner circle of trusted generals
-	- Nikoli the Bearfolk
+	- [[campaigns/eos-rising/people/nikolai-saltvik|Nikolai Saltvik]] the Bearfolk
 	- TBD
