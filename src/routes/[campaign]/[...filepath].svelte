@@ -12,4 +12,4 @@
 	export let result: any;
 </script>
 
-<main class="mt-24 prose max-w-prose mx-auto">{@html result.content}</main>
+<main class="mt-24 px-8 prose max-w-prose mx-auto">{@html result.content}</main>
