@@ -18,12 +18,13 @@
 		imageHeight={900}
 		imageWidth={1600}
 	/>
+	<div class="absolute inset-0 bg-black/80" />
 
-	<h2 class={`text-3xl text-white ${campaign?.font} pb-8`}>
+	<h2 class={`text-3xl text-white ${campaign?.font} pb-8 relative`}>
 		{campaign?.name}
 	</h2>
 </header>
 
-<main class="px-8 prose max-w-prose mx-auto text-white">
+<main class="px-8 prose max-w-prose mx-auto text-white relative">
 	{@html campaign?.content}
 </main>
