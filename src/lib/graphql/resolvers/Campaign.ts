@@ -1,3 +1,4 @@
+import { dev } from '$app/env';
 import { assets, base } from '$app/paths';
 import { getCampaign } from '$lib/campaigns';
 import { getLogs } from '$lib/campaigns/logs';
@@ -32,7 +33,7 @@ const Campaign: CampaignResolvers = {
 		const logResults = await getLogs(id);
 
 		return logResults
-			.filter(({ draft }) => !draft)
+			.filter(({ draft }) => dev || !draft)
 			.map(({ id: logId }) => ({
 				id: logId,
 				campaign: { id }

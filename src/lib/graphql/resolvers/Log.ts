@@ -27,7 +27,7 @@ const Log: LogResolvers = {
 	image: async ({ id, campaign: { id: campaignId } }, { width, height }) => {
 		const imagePath = (await getLog(campaignId, id)).image;
 
-		return path.join('/', base, 'image', `${width}-${height}`, imagePath);
+		return imagePath ? path.join('/', base, 'image', `${width}-${height}`, imagePath) : null;
 	}
 };
 
