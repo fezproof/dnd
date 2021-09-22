@@ -9,6 +9,7 @@
 	export let link: string;
 	export let title: string;
 	export let font: string;
+	export let loading: string = undefined;
 </script>
 
 <div class="shard clip relative">
@@ -26,6 +27,7 @@
 			class:object-top={absolute}
 			width="1000"
 			height="1000"
+			{loading}
 		/>
 		<div class="tint" />
 	</div>

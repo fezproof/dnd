@@ -9,6 +9,7 @@ export const get: RequestHandler = async ({ params: { campaign, slug } }) => {
 				id
 				date
 				name
+				image
 				content {
 					prose
 				}

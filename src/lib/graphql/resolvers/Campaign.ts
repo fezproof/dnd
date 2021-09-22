@@ -10,6 +10,16 @@ const Campaign: CampaignResolvers = {
 	id: ({ id }) => {
 		return id;
 	},
+	name: async ({ id }) => {
+		const { name } = await getCampaign(id);
+
+		return name;
+	},
+	font: async ({ id }) => {
+		const { font } = await getCampaign(id);
+
+		return font;
+	},
 	link: ({ id }) => {
 		return path.join('/', base, id);
 	},

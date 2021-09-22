@@ -44,6 +44,12 @@ const config = {
 						},
 						'ol > li::before': {
 							color: theme('colors.gray.300')
+						},
+						strong: {
+							color: theme('colors.orange.main')
+						},
+						a: {
+							color: theme('colors.green.light')
 						}
 					}
 				}

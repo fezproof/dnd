@@ -39,7 +39,7 @@ export type GetLogQueryVariables = Exact<{
 }>;
 
 
-export type GetLogQuery = { __typename?: 'Query', log?: Maybe<{ __typename?: 'Log', id: string, date?: Maybe<string>, name?: Maybe<string>, content?: Maybe<{ __typename?: 'Content', prose?: Maybe<string> }>, campaign: { __typename?: 'Campaign', id: string, name?: Maybe<string>, link?: Maybe<string>, font?: Maybe<string> } }> };
+export type GetLogQuery = { __typename?: 'Query', log?: Maybe<{ __typename?: 'Log', id: string, date?: Maybe<string>, name?: Maybe<string>, image?: Maybe<string>, content?: Maybe<{ __typename?: 'Content', prose?: Maybe<string> }>, campaign: { __typename?: 'Campaign', id: string, name?: Maybe<string>, link?: Maybe<string>, font?: Maybe<string> } }> };
 
 export type GetCampaignsQueryVariables = Exact<{ [key: string]: never; }>;
 

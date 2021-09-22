@@ -67,6 +67,7 @@
 							image={player.image}
 							link={player.link}
 							title={player.name}
+							loading="lazy"
 						/>
 					{/each}
 				</ShardsContainer>
@@ -89,7 +90,12 @@
 							class="bg-gray-500 text-left flex flex-col justify-end items-stretch py-8 px-4 relative h-[32rem]"
 						>
 							<div class="absolute inset-0 h-full w-full">
-								<img src={log?.image} alt={log.name} class="absolute inset-0 h-full w-full" />
+								<img
+									src={log?.image}
+									alt={log.name}
+									class="absolute inset-0 h-full w-full object-cover"
+									loading="lazy"
+								/>
 								<div class="absolute inset-0 h-full w-full bg-black/60" />
 							</div>
 							<div class="relative">
