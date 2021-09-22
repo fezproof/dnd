@@ -35,6 +35,15 @@ const config = {
 						},
 						h3: {
 							color: theme('colors.gray.300')
+						},
+						h4: {
+							color: theme('colors.gray.300')
+						},
+						blockquote: {
+							color: theme('colors.orange.main')
+						},
+						'ol > li::before': {
+							color: theme('colors.gray.300')
 						}
 					}
 				}
