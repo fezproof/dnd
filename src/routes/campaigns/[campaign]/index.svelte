@@ -81,7 +81,9 @@
 		<h3 class={`section-heading ${campaign?.font}`}>Mission Logs</h3>
 
 		{#if campaign?.logs?.length}
-			<div class="px-8 mx-auto max-w-screen-2xl flex-1 w-full">
+			<div
+				class="px-8 mx-auto max-w-screen-2xl flex-1 w-full flex flex-col items-center justify-center"
+			>
 				<div
 					class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-rows-1 gap-8 items-stretch justify-center"
 				>
