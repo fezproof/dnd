@@ -19,6 +19,7 @@ export type Scalars = {
 
 
 
+
 export type GetCampaignInfoQueryVariables = Exact<{
   id: Scalars['ID'];
 }>;

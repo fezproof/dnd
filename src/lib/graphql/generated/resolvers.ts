@@ -35,6 +35,12 @@ export type Content = {
   raw?: Maybe<Scalars['String']>;
 };
 
+export type Image = {
+  __typename?: 'Image';
+  filePath: Scalars['String'];
+  src?: Maybe<Scalars['String']>;
+};
+
 export type Log = {
   __typename?: 'Log';
   id: Scalars['ID'];
@@ -181,6 +187,7 @@ export type ResolversTypes = {
   ID: ResolverTypeWrapper<Scalars['ID']>;
   String: ResolverTypeWrapper<Scalars['String']>;
   Content: ResolverTypeWrapper<Content>;
+  Image: ResolverTypeWrapper<Image>;
   Log: ResolverTypeWrapper<Log>;
   Int: ResolverTypeWrapper<Scalars['Int']>;
   Player: ResolverTypeWrapper<Player>;
@@ -195,6 +202,7 @@ export type ResolversParentTypes = {
   ID: Scalars['ID'];
   String: Scalars['String'];
   Content: Content;
+  Image: Image;
   Log: Log;
   Int: Scalars['Int'];
   Player: Player;
@@ -220,6 +228,12 @@ export type ContentResolvers<ContextType = any, ParentType extends ResolversPare
   excerpt?: Resolver<Maybe<ResolversTypes['Prose']>, ParentType, ContextType>;
   prose?: Resolver<Maybe<ResolversTypes['Prose']>, ParentType, ContextType>;
   raw?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+};
+
+export type ImageResolvers<ContextType = any, ParentType extends ResolversParentTypes['Image'] = ResolversParentTypes['Image']> = {
+  filePath?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  src?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
@@ -259,6 +273,7 @@ export type QueryResolvers<ContextType = any, ParentType extends ResolversParent
 export type Resolvers<ContextType = any> = {
   Campaign?: CampaignResolvers<ContextType>;
   Content?: ContentResolvers<ContextType>;
+  Image?: ImageResolvers<ContextType>;
   Log?: LogResolvers<ContextType>;
   Player?: PlayerResolvers<ContextType>;
   Prose?: GraphQLScalarType;

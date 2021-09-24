@@ -1,5 +1,10 @@
 scalar Prose
 
+type Image {
+	filePath: String!
+	src: String
+}
+
 type Content {
 	excerpt: Prose
 	prose: Prose
