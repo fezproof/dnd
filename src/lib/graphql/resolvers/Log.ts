@@ -11,7 +11,7 @@ const Log: LogResolvers = {
 		return { id };
 	},
 	link: ({ id: logId, campaign: { id: campaignId } }) => {
-		return path.join('/', base, campaignId, 'logs', logId);
+		return path.join('/', base, 'campaigns', campaignId, 'logs', logId);
 	},
 	name: async ({ id, campaign: { id: campaignId } }) => {
 		const { name } = await getLog(campaignId, id);

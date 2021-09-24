@@ -13,7 +13,7 @@ const processor = unified()
 	.use(wikiLinkPlugin, {
 		aliasDivider: '|',
 		hrefTemplate: (permaLink: string) => {
-			return path.join('/', base, permaLink.replace('campaigns', ''));
+			return path.join('/', base, permaLink);
 		},
 		wikiLinkClassName: ' ',
 		newClassName: ' '

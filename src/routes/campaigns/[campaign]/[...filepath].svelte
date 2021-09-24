@@ -3,7 +3,9 @@
 	import type { Load } from '@sveltejs/kit';
 
 	export const load: Load = async ({ fetch, page: { params } }) => {
-		const response = await fetch(`${base}/${params.campaign}/data/${params.filepath}.json`);
+		const response = await fetch(
+			`${base}/campaigns/${params.campaign}/data/${params.filepath}.json`
+		);
 		return { props: response.json() };
 	};
 </script>

@@ -21,7 +21,7 @@ const Campaign: CampaignResolvers = {
 		return font;
 	},
 	link: ({ id }) => {
-		return path.join('/', base, id);
+		return path.join('/', base, 'campaigns', id);
 	},
 	image: async ({ id, image }) => {
 		if (image) return path.join(assets, image);
