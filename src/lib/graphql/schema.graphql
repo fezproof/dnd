@@ -39,7 +39,7 @@ type Campaign {
 	font: ID
 	content: String
 	excerpt: Prose
-	image: String
+	image: Image
 	players: [Player]
 	logs: [Log]
 }

@@ -9,7 +9,9 @@ export const get: RequestHandler = async ({ params: { campaign } }) => {
 				id
 				name
 				font
-				image
+				image {
+					src
+				}
 				link
 				content
 			}

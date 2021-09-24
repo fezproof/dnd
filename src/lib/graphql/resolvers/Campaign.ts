@@ -24,11 +24,11 @@ const Campaign: CampaignResolvers = {
 		return path.join('/', base, 'campaigns', id);
 	},
 	image: async ({ id, image }) => {
-		if (image) return path.join(assets, image);
+		if (image) return image;
 
-		const { image: imagePath } = await getCampaign(id);
+		const { image: filePath } = await getCampaign(id);
 
-		return path.join(assets, imagePath);
+		return { filePath };
 	},
 	players: async ({ players }) => {
 		if (players?.length) {

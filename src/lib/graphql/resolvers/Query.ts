@@ -7,6 +7,7 @@ const Query: QueryResolvers = {
 		const campaigns = await getCampaigns();
 		return campaigns.map((campaign) => ({
 			...campaign,
+			image: { filePath: campaign.image },
 			players: campaign.players.map((id) => ({ id }))
 		}));
 	},
@@ -14,6 +15,7 @@ const Query: QueryResolvers = {
 		const campaignData = await getCampaign(id);
 		return {
 			...campaignData,
+			image: { filePath: campaignData.image },
 			players: campaignData.players.map((id) => ({ id: id.replace('players/', '') }))
 		};
 	},

@@ -1,7 +1,7 @@
 ---
 name: Hunters of the Arcane
 font: font-hunters
-image: hunters-arcane.jpg
+image: hunters.jpg
 players: []
 ---
 

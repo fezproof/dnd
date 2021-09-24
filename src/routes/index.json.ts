@@ -9,7 +9,9 @@ export const get: RequestHandler = async () => {
 				id
 				name
 				font
-				image
+				image {
+					src
+				}
 				link
 			}
 		}

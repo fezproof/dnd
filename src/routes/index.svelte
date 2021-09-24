@@ -29,7 +29,7 @@
 				<ShardItem
 					fixed
 					font={campaign.font}
-					image={campaign.image}
+					image={campaign?.image?.src}
 					link={campaign.link}
 					title={campaign.name}
 				/>

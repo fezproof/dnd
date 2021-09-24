@@ -27,7 +27,7 @@
 
 <header>
 	<CampaignHeroImage
-		imageUrl={campaign?.image}
+		imageUrl={campaign?.image?.src}
 		imageAlt={`${campaign?.name} hero`}
 		imageHeight={900}
 		imageWidth={1600}
