@@ -11,6 +11,7 @@
 </script>
 
 <script lang="ts">
+	import { fly } from 'svelte/transition';
 	export let campaign: GetCampaignQuery['campaign'] | undefined;
 </script>
 
@@ -32,7 +33,10 @@
 		imageHeight={900}
 		imageWidth={1600}
 	/>
-	<div class="min-h-screen flex flex-col pt-28 justify-end items-stretch">
+	<div
+		class="min-h-screen flex flex-col pt-28 justify-end items-stretch"
+		in:fly={{ y: 100, delay: 200 }}
+	>
 		<div class="px-8 pt-10 pb-16 relative">
 			<div class="absolute -top-6 right-0 left-0 bottom-0 h-full w-full flex flex-col z-[-1]">
 				<div class="h-24 w-full bg-gradient-to-t from-black/60 to-transparent" />
@@ -47,14 +51,14 @@
 				<p class="mb-8 font-sans prose text-white max-w-prose">
 					{@html campaign?.excerpt}
 				</p>
-				<a href={`${campaign?.link}/info`} class={classes['primary-button']}>Read more</a>
+				<!-- <a href={`${campaign?.link}/info`} class={classes['primary-button']}>Read more</a> -->
 			</div>
 		</div>
 	</div>
 </header>
 
 <main>
-	<section class="section flex flex-col">
+	<section class="section min-h-screen flex flex-col">
 		<h3 class={`section-heading ${campaign?.font}`}>The Misfits</h3>
 		{#if campaign?.players?.length}
 			<div
@@ -122,10 +126,10 @@
 
 <style lang="postcss">
 	.section {
-		@apply min-h-screen mx-auto text-center pt-28 pb-12 uppercase;
+		@apply mx-auto text-center pt-28 pb-12 uppercase;
 	}
 
 	.section-heading {
-		@apply text-3xl md:text-4xl lg:text-5xl inline-block mx-auto mb-8 font-semibold border-b-8 border-orange-main pb-2;
+		@apply text-3xl md:text-4xl lg:text-5xl inline-block mx-auto mb-16 font-semibold border-b-8 border-orange-main pb-2;
 	}
 </style>
