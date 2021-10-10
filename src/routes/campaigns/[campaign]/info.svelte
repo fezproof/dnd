@@ -26,5 +26,5 @@
 </header>
 
 <main class="px-8 prose max-w-prose mx-auto text-white relative">
-	{@html campaign?.content}
+	{@html campaign?.content?.prose}
 </main>

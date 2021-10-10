@@ -18,7 +18,7 @@
 <svelte:head>
 	<title>Scroll'd: {campaign?.name}</title>
 	<meta name="title" content={`Scroll'd: ${campaign?.name}`} />
-	<meta name="description" content={campaign?.excerpt || undefined} />
+	<meta name="description" content={campaign?.content?.excerpt || undefined} />
 
 	<!-- <meta property="og:type" content="website" />
 	<meta property="og:title" content={`Scroll'd: ${campaign?.name}`} />
@@ -49,7 +49,7 @@
 					{campaign?.name}
 				</h2>
 				<p class="mb-8 font-sans prose text-white max-w-prose">
-					{@html campaign?.excerpt}
+					{@html campaign?.content?.excerpt}
 				</p>
 				<!-- <a href={`${campaign?.link}/info`} class={classes['primary-button']}>Read more</a> -->
 			</div>
@@ -98,7 +98,7 @@
 							<div class="absolute inset-0 h-full w-full">
 								<img
 									src={log?.image}
-									alt={log.name}
+									alt={log?.name}
 									class="absolute inset-0 h-full w-full object-cover"
 									loading="lazy"
 								/>

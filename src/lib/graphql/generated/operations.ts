@@ -25,14 +25,14 @@ export type GetCampaignQueryVariables = Exact<{
 }>;
 
 
-export type GetCampaignQuery = { __typename?: 'Query', campaign?: Maybe<{ __typename?: 'Campaign', id: string, name?: Maybe<string>, font?: Maybe<string>, excerpt?: Maybe<string>, link?: Maybe<string>, image?: Maybe<{ __typename?: 'Image', src?: Maybe<string> }>, players?: Maybe<Array<{ __typename?: 'Player', id: string, link?: Maybe<string>, image?: Maybe<string>, name?: Maybe<string> }>>, logs?: Maybe<Array<Maybe<{ __typename?: 'Log', id: string, name?: Maybe<string>, link?: Maybe<string>, image?: Maybe<string>, content?: Maybe<{ __typename?: 'Content', excerpt?: Maybe<string> }> }>>> }> };
+export type GetCampaignQuery = { __typename?: 'Query', campaign?: Maybe<{ __typename?: 'Campaign', id: string, name?: Maybe<string>, font?: Maybe<string>, link?: Maybe<string>, image?: Maybe<{ __typename?: 'Image', src?: Maybe<string> }>, content?: Maybe<{ __typename?: 'Content', excerpt?: Maybe<string> }>, players?: Maybe<Array<{ __typename?: 'Player', id: string, link?: Maybe<string>, image?: Maybe<string>, name?: Maybe<string> }>>, logs?: Maybe<Array<{ __typename?: 'Log', id: string, name?: Maybe<string>, link?: Maybe<string>, image?: Maybe<string>, content?: Maybe<{ __typename?: 'Content', excerpt?: Maybe<string> }> }>> }> };
 
 export type GetCampaignInfoQueryVariables = Exact<{
   id: Scalars['ID'];
 }>;
 
 
-export type GetCampaignInfoQuery = { __typename?: 'Query', campaign?: Maybe<{ __typename?: 'Campaign', id: string, name?: Maybe<string>, font?: Maybe<string>, link?: Maybe<string>, content?: Maybe<string>, image?: Maybe<{ __typename?: 'Image', src?: Maybe<string> }> }> };
+export type GetCampaignInfoQuery = { __typename?: 'Query', campaign?: Maybe<{ __typename?: 'Campaign', id: string, name?: Maybe<string>, font?: Maybe<string>, link?: Maybe<string>, image?: Maybe<{ __typename?: 'Image', src?: Maybe<string> }>, content?: Maybe<{ __typename?: 'Content', prose: string }> }> };
 
 export type GetLogQueryVariables = Exact<{
   slug: Scalars['ID'];

@@ -7,22 +7,22 @@ const Log: LogResolvers = {
 	id: ({ id }) => {
 		return id;
 	},
-	campaign: ({ campaign: { id } }) => {
-		return { id };
+	content: async ({ id, campaign: { id: campaignId } }) => {
+		const { content } = await getLog(campaignId, id);
+		return content || null;
 	},
-	link: ({ id: logId, campaign: { id: campaignId } }) => {
-		return path.join('/', base, 'campaigns', campaignId, 'logs', logId);
+	campaign: async ({ campaign }) => {
+		return campaign;
+	},
+	link: ({ id: logId }) => {
+		return path.join('/', base, logId);
 	},
 	name: async ({ id, campaign: { id: campaignId } }) => {
 		const { name } = await getLog(campaignId, id);
-		return name;
+		return name || null;
 	},
 	date: async ({ id }) => {
 		return id;
-	},
-	content: async ({ id, campaign: { id: campaignId } }) => {
-		const { content, excerpt } = await getLog(campaignId, id);
-		return { excerpt, prose: content, raw: content };
 	},
 	image: async ({ id, campaign: { id: campaignId } }, { width, height }) => {
 		const imagePath = (await getLog(campaignId, id)).image;

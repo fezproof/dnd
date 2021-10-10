@@ -58,7 +58,7 @@ type Content {
 	raw: String!
 }
 
-type Log {
+type Log implements Node {
 	id: ID!
 	date: String
 	link: String
@@ -78,16 +78,15 @@ type Player implements Node {
 	image(width: Int, height: Int): String
 }
 
-type Campaign {
+type Campaign implements Node {
 	id: ID!
+	content: Content
 	link: String
 	name: String
 	font: ID
-	content: Prose
-	excerpt: Prose
 	image: Image
 	players: [Player!]
-	logs: [Log]
+	logs: [Log!]
 }
 
 type Query {

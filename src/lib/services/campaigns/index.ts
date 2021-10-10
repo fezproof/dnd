@@ -1,8 +1,11 @@
-import { getMarkdownInfo } from '$lib/utils/markdown';
+import type { Campaign } from '$lib/graphql/generated/resolvers';
+import { POST_FILE_DIR } from '$lib/utils/markdown';
 import { promises as fs } from 'fs';
-import { join } from 'path';
+import { posix as path } from 'path';
+import { getNode } from '../node';
 
-export const CAMPAIGNS_FILE_DIR = 'src/posts/campaigns';
+export const CAMPAIGN_ID_PREFIX = 'campaigns';
+export const CAMPAIGNS_FILE_DIR = path.join(POST_FILE_DIR, CAMPAIGN_ID_PREFIX);
 
 export type CampaignData = {
 	name: string;
@@ -11,25 +14,14 @@ export type CampaignData = {
 	players: string[];
 };
 
-export interface CampaignResult extends CampaignData {
-	content: string;
-	id: string;
-	excerpt: string;
-}
+export type CampaignResult = Omit<Campaign, 'image' | 'players'> & CampaignData;
 
 const getCampaignMD = async (id: string): Promise<CampaignResult> => {
-	const fileContents = await fs.readFile(join(CAMPAIGNS_FILE_DIR, id, `${id}.md`), {
-		encoding: 'utf8'
-	});
+	const indexId = `${id}/${id.substring(CAMPAIGN_ID_PREFIX.length + 1)}`;
 
-	const { content, data, excerpt } = getMarkdownInfo<CampaignData>(fileContents);
+	const campaignData = await getNode<CampaignData>(indexId);
 
-	return {
-		...data,
-		content,
-		id,
-		excerpt
-	};
+	return { ...campaignData, id };
 };
 
 export const getCampaigns = async (): Promise<CampaignResult[]> => {
@@ -40,7 +32,7 @@ export const getCampaigns = async (): Promise<CampaignResult[]> => {
 		.map((dirent) => dirent.name);
 
 	const campaigns = await Promise.all(
-		campaignDirs.map(async (dirName) => await getCampaignMD(dirName))
+		campaignDirs.map(async (dirName) => await getCampaignMD(`${CAMPAIGN_ID_PREFIX}/${dirName}`))
 	);
 
 	return campaigns;

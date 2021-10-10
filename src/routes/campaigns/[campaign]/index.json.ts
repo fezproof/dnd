@@ -1,8 +1,9 @@
 import { executeQuery } from '$lib/graphql';
+import { CAMPAIGN_ID_PREFIX } from '$lib/services/campaigns';
 import type { RequestHandler } from '@sveltejs/kit';
 import gql from 'graphql-tag';
 
-export const get: RequestHandler = async ({ params: { campaign } }) => {
+export const get: RequestHandler = async ({ params: { campaign }, path }) => {
 	const query = gql`
 		query GetCampaign($id: ID!) {
 			campaign(id: $id) {
@@ -12,7 +13,9 @@ export const get: RequestHandler = async ({ params: { campaign } }) => {
 				image {
 					src
 				}
-				excerpt
+				content {
+					excerpt
+				}
 				link
 				players {
 					id
@@ -33,7 +36,7 @@ export const get: RequestHandler = async ({ params: { campaign } }) => {
 		}
 	`;
 	const variables = {
-		id: campaign
+		id: `${CAMPAIGN_ID_PREFIX}/${campaign}`
 	};
 
 	return executeQuery({ query, variables });

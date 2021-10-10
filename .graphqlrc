@@ -8,6 +8,11 @@ generates:
       - typescript-resolvers
     config:
       useTypeImports: true
+      strictScalars: true
+      scalars:
+        Prose: string
+      mappers:
+        Campaign: src/lib/services/campaigns/index#CampaignResult
   src/lib/graphql/generated/operations.ts:
     config:
       onlyOperationTypes: true

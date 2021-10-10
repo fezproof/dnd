@@ -10,43 +10,26 @@ const Campaign: CampaignResolvers = {
 	id: ({ id }) => {
 		return id;
 	},
-	name: async ({ id }) => {
-		const { name } = await getCampaign(id);
-
-		return name;
-	},
-	font: async ({ id }) => {
-		const { font } = await getCampaign(id);
-
-		return font;
-	},
 	link: ({ id }) => {
-		return path.join('/', base, 'campaigns', id);
+		return path.join('/', base, id);
 	},
-	image: async ({ id, image }) => {
-		if (image) return image;
-
-		const { image: filePath } = await getCampaign(id);
-
-		return { filePath };
+	image: async ({ image }) => {
+		return { filePath: image };
 	},
 	players: async ({ players }) => {
-		if (players?.length) {
-			const playerPromises = players.map(async ({ id }) => {
-				return getPlayer(id);
-			});
-			return Promise.all(playerPromises);
-		}
-		return null;
+		const playerResults = players.map((id) => {
+			return getPlayer(id);
+		});
+		return playerResults;
 	},
-	logs: async ({ id }) => {
-		const logResults = await getLogs(id);
+	logs: async (campaign) => {
+		const logResults = await getLogs(campaign.id);
 
 		return logResults
 			.filter(({ draft }) => dev || !draft)
 			.map(({ id: logId }) => ({
 				id: logId,
-				campaign: { id }
+				campaign
 			}));
 	}
 };

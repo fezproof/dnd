@@ -1,4 +1,5 @@
 import { executeQuery } from '$lib/graphql';
+import { CAMPAIGN_ID_PREFIX } from '$lib/services/campaigns';
 import type { RequestHandler } from '@sveltejs/kit';
 import gql from 'graphql-tag';
 
@@ -23,8 +24,8 @@ export const get: RequestHandler = async ({ params: { campaign, slug } }) => {
 		}
 	`;
 	const variables = {
-		slug,
-		campaign
+		slug: slug,
+		campaign: `${CAMPAIGN_ID_PREFIX}/${campaign}`
 	};
 
 	return executeQuery({ query, variables });

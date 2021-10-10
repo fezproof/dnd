@@ -13,7 +13,9 @@ export const get: RequestHandler = async ({ params: { campaign } }) => {
 					src
 				}
 				link
-				content
+				content {
+					prose
+				}
 			}
 		}
 	`;

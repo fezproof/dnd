@@ -1,5 +1,5 @@
 import { executeQuery } from '$lib/graphql';
-import { PLAYER_ID_PREFIX } from '$lib/services/playerss/players';
+import { PLAYER_ID_PREFIX } from '$lib/services/player';
 import type { RequestHandler } from '@sveltejs/kit';
 import gql from 'graphql-tag';
 
