@@ -1,12 +1,20 @@
 import { base } from '$app/paths';
+import { promises as fs } from 'fs';
 import matter from 'gray-matter';
+import _ from 'lodash';
 import { posix as path } from 'path';
 import rehypeStringify from 'rehype-stringify';
 import remarkParse from 'remark-parse';
 import remarkRehype from 'remark-rehype';
 import wikiLinkPlugin from 'remark-wiki-link';
 import unified from 'unified';
-import _ from 'lodash';
+
+export const POST_FILE_DIR = 'src/posts';
+
+export const getPostFile = async (postFilePath: string): Promise<string> =>
+	fs.readFile(path.join(POST_FILE_DIR, postFilePath.concat('.md')), {
+		encoding: 'utf8'
+	});
 
 const processor = unified()
 	.use(remarkParse)
@@ -58,7 +66,7 @@ export const getMarkdownInfo = <T extends { [key: string]: unknown }>(
 
 	const processedData = handleObsidianLinks(data);
 
-	return { data: processedData as T, excerpt: excerpt, content };
+	return { data: processedData as T, excerpt: excerpt as string, content };
 };
 
 const markdownToHtml = async <T extends { [key: string]: unknown }>(
@@ -66,9 +74,10 @@ const markdownToHtml = async <T extends { [key: string]: unknown }>(
 ): Promise<{ content: string; data: T; excerpt: string }> => {
 	const { content, data, excerpt } = getMarkdownInfo<T>(file);
 
-	const parsedHtml = await markdownRawToHtml(content);
+	const parsedContent = await markdownRawToHtml(content);
+	const parsedExcerpt = await markdownRawToHtml(excerpt);
 
-	return { content: String(parsedHtml), data: data as T, excerpt: excerpt };
+	return { content: String(parsedContent), data: data as T, excerpt: String(parsedExcerpt) };
 };
 
 export default markdownToHtml;

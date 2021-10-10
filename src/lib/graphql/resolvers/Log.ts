@@ -1,5 +1,5 @@
 import { base } from '$app/paths';
-import { getLog } from '$lib/campaigns/logs';
+import { getLog } from '$lib/services/campaigns/logs';
 import { posix as path } from 'path';
 import type { LogResolvers } from '../generated/resolvers';
 

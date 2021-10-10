@@ -1,5 +1,6 @@
-import { getCampaign, getCampaigns } from '$lib/campaigns';
-import { getPlayer, getPlayers } from '$lib/players';
+import { getCampaign, getCampaigns } from '$lib/services/campaigns';
+import { getPlayer, getPlayers } from '$lib/services/player';
+import { getNode } from '$lib/services/node';
 import type { QueryResolvers } from '../generated/resolvers';
 
 const Query: QueryResolvers = {
@@ -16,7 +17,7 @@ const Query: QueryResolvers = {
 		return {
 			...campaignData,
 			image: { filePath: campaignData.image },
-			players: campaignData.players.map((id) => ({ id: id.replace('players/', '') }))
+			players: campaignData.players.map((id) => ({ id }))
 		};
 	},
 	log: async (_, { id, campaignId }) => {
@@ -29,6 +30,10 @@ const Query: QueryResolvers = {
 	player: async (_, { id }) => {
 		const playerData = await getPlayer(id);
 		return playerData;
+	},
+	node: async (_, { id }) => {
+		const nodeData = await getNode(id);
+		return nodeData;
 	}
 };
 

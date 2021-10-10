@@ -18,7 +18,7 @@
 <svelte:head>
 	<title>Scroll'd: {campaign?.name}</title>
 	<meta name="title" content={`Scroll'd: ${campaign?.name}`} />
-	<meta name="description" content={campaign?.excerpt} />
+	<meta name="description" content={campaign?.excerpt || undefined} />
 
 	<!-- <meta property="og:type" content="website" />
 	<meta property="og:title" content={`Scroll'd: ${campaign?.name}`} />
@@ -28,7 +28,7 @@
 
 <header>
 	<CampaignHeroImage
-		imageUrl={campaign?.image?.src}
+		imageUrl={campaign?.image?.src || ''}
 		imageAlt={`${campaign?.name} hero`}
 		imageHeight={900}
 		imageWidth={1600}

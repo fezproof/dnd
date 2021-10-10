@@ -1,5 +1,5 @@
 import { base } from '$app/paths';
-import { getCampaign } from '$lib/campaigns';
+import { getCampaign } from '$lib/services/campaigns';
 import { posix as path } from 'path';
 import type { PlayerResolvers } from '../generated/resolvers';
 
@@ -8,7 +8,7 @@ const Player: PlayerResolvers = {
 		return id;
 	},
 	link: ({ id }) => {
-		return path.join('/', base, 'players', id);
+		return path.join('/', base, id);
 	},
 	image: async ({ id, image }, { width, height }) => {
 		const imagePath = image ?? (await getCampaign(id)).image;

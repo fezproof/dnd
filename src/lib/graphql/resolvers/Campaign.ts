@@ -1,8 +1,8 @@
 import { dev } from '$app/env';
-import { assets, base } from '$app/paths';
-import { getCampaign } from '$lib/campaigns';
-import { getLogs } from '$lib/campaigns/logs';
-import { getPlayer } from '$lib/players';
+import { base } from '$app/paths';
+import { getCampaign } from '$lib/services/campaigns';
+import { getLogs } from '$lib/services/campaigns/logs';
+import { getPlayer } from '$lib/services/player';
 import { posix as path } from 'path';
 import type { CampaignResolvers } from '../generated/resolvers';
 

@@ -11,7 +11,6 @@ export type Scalars = {
   Boolean: boolean;
   Int: number;
   Float: number;
-  /** Parsed html prose */
   Prose: any;
 };
 
@@ -21,18 +20,18 @@ export type Campaign = {
   link?: Maybe<Scalars['String']>;
   name?: Maybe<Scalars['String']>;
   font?: Maybe<Scalars['ID']>;
-  content?: Maybe<Scalars['String']>;
+  content?: Maybe<Scalars['Prose']>;
   excerpt?: Maybe<Scalars['Prose']>;
   image?: Maybe<Image>;
-  players?: Maybe<Array<Maybe<Player>>>;
+  players?: Maybe<Array<Player>>;
   logs?: Maybe<Array<Maybe<Log>>>;
 };
 
 export type Content = {
   __typename?: 'Content';
   excerpt?: Maybe<Scalars['Prose']>;
-  prose?: Maybe<Scalars['Prose']>;
-  raw?: Maybe<Scalars['String']>;
+  prose: Scalars['Prose'];
+  raw: Scalars['String'];
 };
 
 export type Image = {
@@ -58,13 +57,17 @@ export type LogImageArgs = {
   height?: Maybe<Scalars['Int']>;
 };
 
-export type Player = {
+export type Node = {
+  id: Scalars['ID'];
+  content?: Maybe<Content>;
+};
+
+export type Player = Node & {
   __typename?: 'Player';
   id: Scalars['ID'];
   link?: Maybe<Scalars['String']>;
   name?: Maybe<Scalars['String']>;
-  content?: Maybe<Scalars['String']>;
-  excerpt?: Maybe<Scalars['String']>;
+  content?: Maybe<Content>;
   image?: Maybe<Scalars['String']>;
 };
 
@@ -82,6 +85,7 @@ export type Query = {
   log?: Maybe<Log>;
   player?: Maybe<Player>;
   players?: Maybe<Array<Maybe<Player>>>;
+  node?: Maybe<Node>;
 };
 
 
@@ -97,6 +101,11 @@ export type QueryLogArgs = {
 
 
 export type QueryPlayerArgs = {
+  id: Scalars['ID'];
+};
+
+
+export type QueryNodeArgs = {
   id: Scalars['ID'];
 };
 
@@ -190,6 +199,7 @@ export type ResolversTypes = {
   Image: ResolverTypeWrapper<Image>;
   Log: ResolverTypeWrapper<Log>;
   Int: ResolverTypeWrapper<Scalars['Int']>;
+  Node: ResolversTypes['Player'];
   Player: ResolverTypeWrapper<Player>;
   Prose: ResolverTypeWrapper<Scalars['Prose']>;
   Query: ResolverTypeWrapper<{}>;
@@ -205,6 +215,7 @@ export type ResolversParentTypes = {
   Image: Image;
   Log: Log;
   Int: Scalars['Int'];
+  Node: ResolversParentTypes['Player'];
   Player: Player;
   Prose: Scalars['Prose'];
   Query: {};
@@ -216,18 +227,18 @@ export type CampaignResolvers<ContextType = any, ParentType extends ResolversPar
   link?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   name?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   font?: Resolver<Maybe<ResolversTypes['ID']>, ParentType, ContextType>;
-  content?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  content?: Resolver<Maybe<ResolversTypes['Prose']>, ParentType, ContextType>;
   excerpt?: Resolver<Maybe<ResolversTypes['Prose']>, ParentType, ContextType>;
   image?: Resolver<Maybe<ResolversTypes['Image']>, ParentType, ContextType>;
-  players?: Resolver<Maybe<Array<Maybe<ResolversTypes['Player']>>>, ParentType, ContextType>;
+  players?: Resolver<Maybe<Array<ResolversTypes['Player']>>, ParentType, ContextType>;
   logs?: Resolver<Maybe<Array<Maybe<ResolversTypes['Log']>>>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
 export type ContentResolvers<ContextType = any, ParentType extends ResolversParentTypes['Content'] = ResolversParentTypes['Content']> = {
   excerpt?: Resolver<Maybe<ResolversTypes['Prose']>, ParentType, ContextType>;
-  prose?: Resolver<Maybe<ResolversTypes['Prose']>, ParentType, ContextType>;
-  raw?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  prose?: Resolver<ResolversTypes['Prose'], ParentType, ContextType>;
+  raw?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
@@ -248,12 +259,17 @@ export type LogResolvers<ContextType = any, ParentType extends ResolversParentTy
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
+export type NodeResolvers<ContextType = any, ParentType extends ResolversParentTypes['Node'] = ResolversParentTypes['Node']> = {
+  __resolveType: TypeResolveFn<'Player', ParentType, ContextType>;
+  id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
+  content?: Resolver<Maybe<ResolversTypes['Content']>, ParentType, ContextType>;
+};
+
 export type PlayerResolvers<ContextType = any, ParentType extends ResolversParentTypes['Player'] = ResolversParentTypes['Player']> = {
   id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
   link?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   name?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
-  content?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
-  excerpt?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  content?: Resolver<Maybe<ResolversTypes['Content']>, ParentType, ContextType>;
   image?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType, RequireFields<PlayerImageArgs, never>>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
@@ -268,6 +284,7 @@ export type QueryResolvers<ContextType = any, ParentType extends ResolversParent
   log?: Resolver<Maybe<ResolversTypes['Log']>, ParentType, ContextType, RequireFields<QueryLogArgs, 'id' | 'campaignId'>>;
   player?: Resolver<Maybe<ResolversTypes['Player']>, ParentType, ContextType, RequireFields<QueryPlayerArgs, 'id'>>;
   players?: Resolver<Maybe<Array<Maybe<ResolversTypes['Player']>>>, ParentType, ContextType>;
+  node?: Resolver<Maybe<ResolversTypes['Node']>, ParentType, ContextType, RequireFields<QueryNodeArgs, 'id'>>;
 };
 
 export type Resolvers<ContextType = any> = {
@@ -275,6 +292,7 @@ export type Resolvers<ContextType = any> = {
   Content?: ContentResolvers<ContextType>;
   Image?: ImageResolvers<ContextType>;
   Log?: LogResolvers<ContextType>;
+  Node?: NodeResolvers<ContextType>;
   Player?: PlayerResolvers<ContextType>;
   Prose?: GraphQLScalarType;
   Query?: QueryResolvers<ContextType>;

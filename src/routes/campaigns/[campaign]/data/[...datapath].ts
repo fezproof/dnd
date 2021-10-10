@@ -4,11 +4,11 @@ import { promises as fs } from 'fs';
 
 export const get: RequestHandler = async ({ params }) => {
 	const markdownFile = await fs.readFile(
-		`src/posts/campaigns/${params.campaign}/${params.datapath.replace('.json', '.md')}`,
+		`src/posts/campaigns/${params.campaign}/${params.datapath?.replace('.json', '.md')}`,
 		{ encoding: 'utf-8' }
 	);
 
-	const result = await markdownToHtml<null>(markdownFile);
+	const result = await markdownToHtml<{ [key: string]: null }>(markdownFile);
 
 	return {
 		body: { result },

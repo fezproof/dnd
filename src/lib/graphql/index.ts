@@ -1,4 +1,5 @@
 import type { EndpointOutput } from '@sveltejs/kit';
+import type { JSONValue } from '@sveltejs/kit/types/endpoint';
 import { DocumentNode, execute } from 'graphql';
 import { createSchema } from './schema';
 
@@ -26,7 +27,7 @@ export const executeQuery = async ({
 
 	return {
 		body: {
-			props: data
+			props: data as JSONValue
 		}
 	};
 };

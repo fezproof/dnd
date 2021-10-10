@@ -1,6 +1,6 @@
+import { getMarkdownInfo } from '$lib/utils/markdown';
 import { promises as fs } from 'fs';
 import { join } from 'path';
-import markdownToHtml from '../utils/markdown';
 
 export const CAMPAIGNS_FILE_DIR = 'src/posts/campaigns';
 
@@ -22,7 +22,7 @@ const getCampaignMD = async (id: string): Promise<CampaignResult> => {
 		encoding: 'utf8'
 	});
 
-	const { content, data, excerpt } = await markdownToHtml<CampaignData>(fileContents);
+	const { content, data, excerpt } = getMarkdownInfo<CampaignData>(fileContents);
 
 	return {
 		...data,

@@ -1,7 +1,7 @@
 import { CAMPAIGNS_FILE_DIR } from '.';
 import { promises as fs } from 'fs';
 import { join } from 'path';
-import { getMarkdownInfo } from '../utils/markdown';
+import { getMarkdownInfo } from '$lib/utils/markdown';
 
 type LogData = {
 	name: string;

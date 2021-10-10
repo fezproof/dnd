@@ -1,4 +1,5 @@
 import { executeQuery } from '$lib/graphql';
+import { PLAYER_ID_PREFIX } from '$lib/services/playerss/players';
 import type { RequestHandler } from '@sveltejs/kit';
 import gql from 'graphql-tag';
 
@@ -9,12 +10,14 @@ export const get: RequestHandler = async ({ params: { playerId } }) => {
 				id
 				name
 				image
-				content
+				content {
+					prose
+				}
 			}
 		}
 	`;
 	const variables = {
-		id: playerId
+		id: `${PLAYER_ID_PREFIX}/${playerId}`
 	};
 	return executeQuery({ query, variables });
 };

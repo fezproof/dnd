@@ -9,7 +9,6 @@ export type Scalars = {
   Boolean: boolean;
   Int: number;
   Float: number;
-  /** Parsed html prose */
   Prose: string;
 };
 
@@ -20,6 +19,14 @@ export type Scalars = {
 
 
 
+
+export type GetCampaignQueryVariables = Exact<{
+  id: Scalars['ID'];
+}>;
+
+
+export type GetCampaignQuery = { __typename?: 'Query', campaign?: Maybe<{ __typename?: 'Campaign', id: string, name?: Maybe<string>, font?: Maybe<string>, excerpt?: Maybe<string>, link?: Maybe<string>, image?: Maybe<{ __typename?: 'Image', src?: Maybe<string> }>, players?: Maybe<Array<{ __typename?: 'Player', id: string, link?: Maybe<string>, image?: Maybe<string>, name?: Maybe<string> }>>, logs?: Maybe<Array<Maybe<{ __typename?: 'Log', id: string, name?: Maybe<string>, link?: Maybe<string>, image?: Maybe<string>, content?: Maybe<{ __typename?: 'Content', excerpt?: Maybe<string> }> }>>> }> };
+
 export type GetCampaignInfoQueryVariables = Exact<{
   id: Scalars['ID'];
 }>;
@@ -27,20 +34,13 @@ export type GetCampaignInfoQueryVariables = Exact<{
 
 export type GetCampaignInfoQuery = { __typename?: 'Query', campaign?: Maybe<{ __typename?: 'Campaign', id: string, name?: Maybe<string>, font?: Maybe<string>, link?: Maybe<string>, content?: Maybe<string>, image?: Maybe<{ __typename?: 'Image', src?: Maybe<string> }> }> };
 
-export type GetCampaignQueryVariables = Exact<{
-  id: Scalars['ID'];
-}>;
-
-
-export type GetCampaignQuery = { __typename?: 'Query', campaign?: Maybe<{ __typename?: 'Campaign', id: string, name?: Maybe<string>, font?: Maybe<string>, excerpt?: Maybe<string>, link?: Maybe<string>, image?: Maybe<{ __typename?: 'Image', src?: Maybe<string> }>, players?: Maybe<Array<Maybe<{ __typename?: 'Player', id: string, link?: Maybe<string>, image?: Maybe<string>, name?: Maybe<string> }>>>, logs?: Maybe<Array<Maybe<{ __typename?: 'Log', id: string, name?: Maybe<string>, link?: Maybe<string>, image?: Maybe<string>, content?: Maybe<{ __typename?: 'Content', excerpt?: Maybe<string> }> }>>> }> };
-
 export type GetLogQueryVariables = Exact<{
   slug: Scalars['ID'];
   campaign: Scalars['ID'];
 }>;
 
 
-export type GetLogQuery = { __typename?: 'Query', log?: Maybe<{ __typename?: 'Log', id: string, date?: Maybe<string>, name?: Maybe<string>, image?: Maybe<string>, content?: Maybe<{ __typename?: 'Content', prose?: Maybe<string> }>, campaign: { __typename?: 'Campaign', id: string, name?: Maybe<string>, link?: Maybe<string>, font?: Maybe<string> } }> };
+export type GetLogQuery = { __typename?: 'Query', log?: Maybe<{ __typename?: 'Log', id: string, date?: Maybe<string>, name?: Maybe<string>, image?: Maybe<string>, content?: Maybe<{ __typename?: 'Content', prose: string }>, campaign: { __typename?: 'Campaign', id: string, name?: Maybe<string>, link?: Maybe<string>, font?: Maybe<string> } }> };
 
 export type GetCampaignsQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -52,4 +52,4 @@ export type GetPlayerQueryVariables = Exact<{
 }>;
 
 
-export type GetPlayerQuery = { __typename?: 'Query', player?: Maybe<{ __typename?: 'Player', id: string, name?: Maybe<string>, image?: Maybe<string>, content?: Maybe<string> }> };
+export type GetPlayerQuery = { __typename?: 'Query', player?: Maybe<{ __typename?: 'Player', id: string, name?: Maybe<string>, image?: Maybe<string>, content?: Maybe<{ __typename?: 'Content', prose: string }> }> };

@@ -1,5 +1,52 @@
 scalar Prose
 
+# interface Entry {
+# 	id: ID!
+# 	name: String!
+# 	content: Content!
+# 	campaign: Campaign
+# }
+
+# enum PlaceType {
+# 	BUILDING
+# 	VILLAGE
+# 	TOWN
+# 	CITY
+# 	COUNTRY
+# 	POINT_OF_INTEREST
+# 	LANDMARK
+# }
+
+# type Place implements Entry {
+# 	id: ID!
+# 	name: String!
+# 	content: Content!
+# 	campaign: Campaign
+# 	type: PlaceType
+# }
+
+# type Organisation implements Entry {
+# 	id: ID!
+# 	name: String!
+# 	content: Content!
+# 	campaign: Campaign
+# 	leader: [Character!]
+# 	knownMembers: [Character]
+# }
+
+# type Character implements Entry {
+# 	id: ID!
+# 	name: String!
+# 	content: Content!
+# 	campaign: Campaign
+# 	organisation: Organisation
+# }
+
+interface Node {
+	id: ID! # Filepath of the post
+	content: Content
+}
+
 type Image {
 	filePath: String!
 	src: String
@@ -7,8 +54,8 @@ type Image {
 
 type Content {
 	excerpt: Prose
-	prose: Prose
-	raw: String
+	prose: Prose!
+	raw: String!
 }
 
 type Log {
@@ -23,12 +70,11 @@ type Log {
 	campaign: Campaign!
 }
 
-type Player {
+type Player implements Node {
 	id: ID!
 	link: String
 	name: String
-	content: String
-	excerpt: String
+	content: Content
 	image(width: Int, height: Int): String
 }
 
@@ -37,10 +83,10 @@ type Campaign {
 	link: String
 	name: String
 	font: ID
-	content: String
+	content: Prose
 	excerpt: Prose
 	image: Image
-	players: [Player]
+	players: [Player!]
 	logs: [Log]
 }
 
@@ -50,4 +96,5 @@ type Query {
 	log(id: ID!, campaignId: ID!): Log
 	player(id: ID!): Player
 	players: [Player]
+	node(id: ID!): Node
 }

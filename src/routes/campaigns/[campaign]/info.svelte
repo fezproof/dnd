@@ -13,7 +13,7 @@
 
 <header class="mt-32 px-8 max-w-prose mx-auto">
 	<CampaignHeroImage
-		imageUrl={campaign?.image?.src}
+		imageUrl={campaign?.image?.src || ''}
 		imageAlt={`${campaign?.name} hero`}
 		imageHeight={900}
 		imageWidth={1600}
